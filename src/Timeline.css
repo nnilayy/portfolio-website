@@ -1,0 +1,42 @@
+/* Resetting margins, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400; /* Normal weight */
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bolder for headings */
+}
+
+/* src/Timeline.css */
+.timeline-section {
+    position: relative;
+    height: 300vh; /* Adjust this based on how long you want the timeline */
+    background-color: #ffffff;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center;
+  }
+  
+  .timeline-container {
+    display: flex;
+    justify-content: center; /* Center the SVG within the container */
+    width: 100%; /* Ensure the container spans the full width */
+    max-width: 600px; /* Set a maximum width for the container */
+  }
+  
+  .timeline-svg {
+    display: block;
+    width: 100%; /* Make the width of the SVG dynamic and responsive */
+    height: auto; /* Allow the height to adjust automatically */
+    max-width: 100%; /* Ensure the*/
+  }  

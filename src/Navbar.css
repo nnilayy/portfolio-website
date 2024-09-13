@@ -1,0 +1,45 @@
+/* Resetting margins, padding, and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400; /* Normal weight */
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bolder for headings */
+}
+
+
+/* src/Navbar.css */
+.navbar {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navbar-links a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .navbar-links a:hover {
+    color: #007bff;
+  }
+  
