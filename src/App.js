@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Introduction from './Introduction';
 import Timeline from './Timeline';
 import Footer from './Footer';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (

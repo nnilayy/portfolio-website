@@ -1,21 +1,4 @@
-/* Resetting margins, padding, and box-sizing for all elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 400; /* Normal weight */
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700; /* Bolder for headings */
-}
-
+@import './common.css';
 
 /* src/Navbar.css */
 .navbar {

@@ -1,6 +1,6 @@
 // src/Introduction.js
 import React from 'react';
-import './Introduction.css';
+import './styles/Introduction.css';
 
 const Introduction = () => {
   return (

@@ -1,6 +1,6 @@
 // src/Timeline.js
 import React, { useEffect, useState, useRef } from 'react';
-import './Timeline.css';
+import './styles/Timeline.css';
 
 const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 150, frequency = 400 }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
