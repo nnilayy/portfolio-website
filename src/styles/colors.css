@@ -4,7 +4,7 @@
   --primary-color: #007bff;
   --secondary-color: #6c757d;
   --background-color: #ffffff;
-  --text-color: #333333;
+  --text-color: #b7a0a0;
 
   /* App specific colors */
   --app-header-bg: #282c34;
@@ -12,16 +12,17 @@
   --app-link: #61dafb;
 
   /* Navbar colors */
-  --navbar-bg: #333333;
+  --navbar-bg: #323030;
   --navbar-text: #ffffff;
-  --navbar-link-hover: #007bff;
+  --navbar-link-hover: #277fddd3;
 
   /* Footer colors */
-  --footer-bg: #333333;
+  --footer-bg: #000000;
   --footer-text: #ffffff;
 
   /* Introduction colors */
-  --introduction-bg: #f8f9fa;
+  --introduction-bg: #625c5c;
+  --introduction-text: #c9baba;
 
   /* Timeline colors */
   --timeline-bg: #ffffff;

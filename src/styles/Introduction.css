@@ -6,6 +6,7 @@
   margin-top: 60px; /* Ensure content is not hidden behind navbar */
   text-align: center;
   background-color: var(--introduction-bg);
+  color: var(--introduction-text);
 }
 
 .introduction h1 {
