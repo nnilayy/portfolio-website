@@ -1,10 +1,10 @@
 @import './common.css';
+@import './colors.css';
 
-/* src/Navbar.css */
 .navbar {
     width: 100%;
     padding: 20px;
-    background-color: #333;
+    background-color: var(--navbar-bg);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -16,13 +16,13 @@
   }
   
   .navbar-links a {
-    color: #fff;
+    color: var(--navbar-text);
     margin-left: 20px;
     text-decoration: none;
     font-size: 16px;
   }
   
   .navbar-links a:hover {
-    color: #007bff;
+    color: var(--navbar-link-hover);
   }
   

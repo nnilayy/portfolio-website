@@ -1,27 +1,26 @@
-/* Import common styles */
 @import './common.css';
+@import './colors.css';
 
-/* src/Timeline.css */
 .timeline-section {
     position: relative;
-    height: 300vh; /* Adjust this based on how long you want the timeline */
-    background-color: #ffffff;
+    height: 300vh; 
+    background-color: var(--timeline-bg);
     padding-top: 50px;
     display: flex;
-    justify-content: center; /* Center the container horizontally */
+    justify-content: center;
     align-items: center;
   }
   
   .timeline-container {
     display: flex;
-    justify-content: center; /* Center the SVG within the container */
-    width: 100%; /* Ensure the container spans the full width */
-    max-width: 600px; /* Set a maximum width for the container */
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
   }
   
   .timeline-svg {
     display: block;
-    width: 100%; /* Make the width of the SVG dynamic and responsive */
-    height: auto; /* Allow the height to adjust automatically */
-    max-width: 100%; /* Ensure the*/
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }  

@@ -1,12 +1,11 @@
 @import './common.css';
+@import './colors.css';
 
-
-/* src/Introduction.css */
 .introduction {
   padding: 250px 20px; /* Increased padding to make the section larger */
   margin-top: 60px; /* Ensure content is not hidden behind navbar */
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: var(--introduction-bg);
 }
 
 .introduction h1 {

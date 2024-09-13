@@ -1,0 +1,28 @@
+/* colors.css */
+:root {
+  /* General colors */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #ffffff;
+  --text-color: #333333;
+
+  /* App specific colors */
+  --app-header-bg: #282c34;
+  --app-header-text: #ffffff;
+  --app-link: #61dafb;
+
+  /* Navbar colors */
+  --navbar-bg: #333333;
+  --navbar-text: #ffffff;
+  --navbar-link-hover: #007bff;
+
+  /* Footer colors */
+  --footer-bg: #333333;
+  --footer-text: #ffffff;
+
+  /* Introduction colors */
+  --introduction-bg: #f8f9fa;
+
+  /* Timeline colors */
+  --timeline-bg: #ffffff;
+}
