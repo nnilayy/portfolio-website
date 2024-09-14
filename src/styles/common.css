@@ -1,3 +1,5 @@
+/* common.css */
+
 @import './colors.css';
 
 * {
@@ -5,25 +7,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .header {
-  width:100%;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700; /* Bolder for headings */
   color: var(--introduction-heading); /* Use neon color for headings */
-  text-shadow: 0 0 5px var(--introduction-heading);
+  text-shadow: 0 0 10px var(--introduction-heading);
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400; /* Normal weight */
-    font-optical-sizing: auto;
-    font-style: normal;
-    background-color: var(--background-color);
-    color: var(--text-color);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400; /* Normal weight */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  cursor: url('cursors/cursor-default.png'), auto;
 }
 
+/* Button Styles */
 .button {
   background-color: transparent;
   border: 2px solid var(--primary-color);
@@ -38,6 +41,7 @@ body {
   color: var(--background-color);
   box-shadow: 0 0 10px var(--primary-color);
 }
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 12px;
@@ -68,4 +72,31 @@ body {
 /* Smooth scrolling for the whole page */
 html {
   scroll-behavior: smooth;
+}
+
+/* Custom text selection styles */
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-text-color);
+  text-shadow: var(--selection-text-shadow);
+}
+
+::-moz-selection {
+  background: var(--selection-background);
+  color: var(--selection-text-color);
+  text-shadow: var(--selection-text-shadow);
+}
+
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  margin: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: var(--cursor-circle-gradient);
+  z-index: 9999;
+  transition: transform 0.1s;
 }

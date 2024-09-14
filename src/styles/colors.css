@@ -1,3 +1,5 @@
+/* colors.css */
+
 :root {
   /* General colors */
   --primary-color: #39ff14; /* Neon Green */
@@ -27,10 +29,22 @@
   /* Timeline colors */
   --timeline-bg: #000000; /* Pitch Black */
   --timeline-dark-path: #333333; /* Dark Gray */
-  --timeline-bright-line: #ffffff; /* Neon Green */
+  --timeline-bright-line: #ffffff; /* White for neon effect */
 
   /* Scrollbar colors */
   --scrollbar-track: #111111; /* Very Dark Gray */
-  --scrollbar-thumb: rgb(255, 255, 255); /* Neon Cyan */
+  --scrollbar-thumb: #ffffff; /* White */
   --scrollbar-thumb-hover: #39ff14; /* Neon Green */
+
+  /* Selection colors */
+  --selection-background: #ffffff; /* White background */
+  --selection-text-color: #000000; /* Black text */
+  --selection-text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* Cursor colors */
+  --cursor-circle-gradient: radial-gradient(
+    circle,
+    rgba(57, 255, 20, 0.2) 0%,
+    rgba(57, 255, 20, 0) 70%
+  );
 }
