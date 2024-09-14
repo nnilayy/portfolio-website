@@ -10,7 +10,7 @@ const calculatePathBounds = (pathData) => {
   let minX = Infinity;
   let maxX = -Infinity;
 
-  for (let i = 0; i <= totalPathLength; i += 100) {
+  for (let i = 0; i <= totalPathLength; i += 10) {
     const point = tempPath.getPointAtLength(i);
     minX = Math.min(minX, point.x);
     maxX = Math.max(maxX, point.x);
