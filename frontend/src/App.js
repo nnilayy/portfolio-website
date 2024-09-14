@@ -30,7 +30,7 @@ function App() {
       <div className="grid-container">
         <Navbar />
         <Introduction />
-        <Timeline />
+        <Timeline numCheckpoints={5} />
         <Footer />
       </div>
 

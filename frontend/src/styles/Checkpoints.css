@@ -1,0 +1,12 @@
+@import './common.css';
+@import './colors.css';
+
+.checkpoint {
+  transition: fill 0.5s ease, filter 0.5s ease;
+  fill: var(--checkpoint-default-color);
+}
+
+.checkpoint.passed {
+  fill: var(--checkpoint-passed-color);
+  filter: drop-shadow(0 0 6px var(--checkpoint-glow-color));
+}

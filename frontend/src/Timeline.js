@@ -1,8 +1,9 @@
 // src/Timeline.js
 import React, { useEffect, useState, useRef } from 'react';
 import './styles/Timeline.css';
+import Checkpoints from './Checkpoints';
 
-const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequency = 200 }) => {
+const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequency = 200, numCheckpoints = 3 }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -63,7 +64,7 @@ const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequen
     >
       <div className="timeline-container">
         <svg
-          viewBox={`0 0 ${lineWidth} ${lineLength}`} /* Dynamic viewBox */
+          viewBox={`0 0 ${lineWidth} ${lineLength}`}
           preserveAspectRatio="xMidYMin meet"
           className="timeline-svg"
           height={lineLength}
@@ -80,6 +81,14 @@ const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequen
             strokeDashoffset={
               totalLength - scrollPercent * totalLength
             }
+          />
+
+          {/* Add Checkpoints */}
+          <Checkpoints
+            numCheckpoints={numCheckpoints}
+            lineLength={lineLength}
+            pathData={pathData}
+            scrollPercent={scrollPercent}
           />
         </svg>
       </div>

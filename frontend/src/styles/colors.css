@@ -52,4 +52,8 @@
   --grid-line-color: rgba(255, 255, 255, 0.094);
   --grid-line-width: 1px;
   --grid-square-size: 75px;
+
+  --checkpoint-default-color: #333333; /* Dark Gray */
+  --checkpoint-passed-color: #ffffff; /* White */
+  --checkpoint-glow-color: #ffffff; /* White glow */
 }
