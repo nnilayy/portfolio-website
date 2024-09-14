@@ -9,8 +9,8 @@
   }
   
   .rectangle-popup rect {
-    fill: white;
-    stroke: #333;
+    fill: rgba(255, 255, 255, 0.395);
+    stroke: #fdfdfd;
     stroke-width: 1;
   }
   

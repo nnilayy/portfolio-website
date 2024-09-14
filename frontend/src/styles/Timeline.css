@@ -11,6 +11,7 @@
   padding-top: 80px;
   padding-bottom: 10px;
   display: flex;
+  background-color: transparent;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -20,7 +21,9 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 80%;
+  max-width: 100%;
+  background-color: transparent;
+  padding: 0 60px;
 }
 
 .timeline-svg {

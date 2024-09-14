@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import './styles/Timeline.css';
 import Checkpoints from './Checkpoints';
 
@@ -27,27 +27,30 @@ const Timeline = ({
     return pathData;
   }, [lineWidth, lineLength, amplitude, frequency]);
 
+  const handleScroll = useCallback(() => {
+    const timelineSection = timelineSectionRef.current;
+    if (!timelineSection) return;
+
+    const rect = timelineSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const sectionAbove = Math.max(0, -rect.top);
+    const scrollProgress = sectionAbove / (rect.height - viewportHeight);
+    const scrolled = Math.max(0, Math.min(1, scrollProgress));
+    setScrollPercent(scrolled);
+  }, []);
+
   useEffect(() => {
     const pathElement = pathRef.current;
-    const length = pathElement.getTotalLength();
-    setTotalLength(length);
-
-    const timelineSection = timelineSectionRef.current;
-
-    const handleScroll = () => {
-      const rect = timelineSection.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const sectionAbove = Math.max(0, -rect.top);
-      const scrollProgress = sectionAbove / (rect.height - viewportHeight);
-      const scrolled = Math.max(0, Math.min(1, scrollProgress));
-      setScrollPercent(scrolled);
-    };
+    if (pathElement) {
+      const length = pathElement.getTotalLength();
+      setTotalLength(length);
+    }
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   return (
     <section id="timeline-section" className="timeline-section" ref={timelineSectionRef}>

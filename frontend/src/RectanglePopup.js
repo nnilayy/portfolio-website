@@ -2,15 +2,15 @@ import React from 'react';
 import './styles/RectanglePopup.css';
 
 const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => {
-  const popupWidth = 100;
-  const popupHeight = 60;
+  const popupWidth = 220;
+  const popupHeight = 200;
   const margin = 20;
 
   const popupX = direction === 'left'
     ? pathBounds.minX - popupWidth - margin
     : pathBounds.maxX + margin;
 
-  const popupY = y - popupHeight / 2;
+  const popupY = y - popupHeight / 2 + 80;
 
   return (
     <g className={`rectangle-popup ${direction} ${isVisible ? 'visible' : ''}`}>
@@ -19,8 +19,8 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
         y={popupY}
         width={popupWidth}
         height={popupHeight}
-        rx={5}
-        ry={5}
+        rx={10}
+        ry={10}
       />
       <text
         x={popupX + popupWidth / 2}
@@ -34,11 +34,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
   );
 };
 
-const areEqual = (prevProps, nextProps) => {
-  return (
-    prevProps.isVisible === nextProps.isVisible &&
-    prevProps.content === nextProps.content
-  );
-};
+const areEqual = (prevProps, nextProps) => 
+  prevProps.isVisible === nextProps.isVisible && prevProps.content === nextProps.content;
 
 export default React.memo(RectanglePopup, areEqual);
