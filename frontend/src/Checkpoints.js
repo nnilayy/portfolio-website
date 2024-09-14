@@ -1,41 +1,66 @@
-// src/Checkpoints.js
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import './styles/Checkpoints.css';
+import RectanglePopup from './RectanglePopup';
 
-const Checkpoints = ({ numCheckpoints, lineLength, pathData, scrollPercent }) => {
-  const [checkpoints, setCheckpoints] = useState([]);
-
-  useEffect(() => {
-    const totalCheckpoints = numCheckpoints + 2; // Including start and end
+const Checkpoints = ({ numCheckpoints, pathData, scrollPercent }) => {
+  const { checkpoints, pathBounds } = useMemo(() => {
+    const totalCheckpoints = numCheckpoints + 2;
     const tempCheckpoints = [];
-
-    // Create a temporary SVG path element
     const tempPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     tempPath.setAttribute('d', pathData);
     const totalPathLength = tempPath.getTotalLength();
 
+    let minX = Infinity;
+    let maxX = -Infinity;
+
+    // Calculate path bounds
+    for (let i = 0; i <= totalPathLength; i += 10) {
+      const point = tempPath.getPointAtLength(i);
+      minX = Math.min(minX, point.x);
+      maxX = Math.max(maxX, point.x);
+    }
+
     for (let i = 0; i < totalCheckpoints; i++) {
       const position = i / (totalCheckpoints - 1);
       const lengthAtPoint = position * totalPathLength;
-      const point = tempPath.getPointAtLength(lengthAtPoint);
+      const { x, y } = tempPath.getPointAtLength(lengthAtPoint);
 
-      const isPassed = scrollPercent >= position;
+      const isMiddleCheckpoint = i > 0 && i < totalCheckpoints - 1;
+      const popupDirection = i % 2 === 0 ? 'left' : 'right';
 
-      tempCheckpoints.push(
-        <circle
-          key={i}
-          cx={point.x}
-          cy={point.y}
-          r={10}
-          className={`checkpoint ${isPassed ? 'passed' : ''}`}
-        />
-      );
+      tempCheckpoints.push({ x, y, isMiddleCheckpoint, popupDirection, index: i, position });
     }
 
-    setCheckpoints(tempCheckpoints);
-  }, [numCheckpoints, lineLength, pathData, scrollPercent]);
+    return { checkpoints: tempCheckpoints, pathBounds: { minX, maxX } };
+  }, [numCheckpoints, pathData]);
 
-  return <>{checkpoints}</>;
+  return (
+    <>
+      {checkpoints.map(({ x, y, isMiddleCheckpoint, popupDirection, index, position }) => {
+        const isPassed = scrollPercent >= position;
+        return (
+          <g key={index}>
+            <circle
+              cx={x}
+              cy={y}
+              r={10}
+              className={`checkpoint ${isPassed ? 'passed' : ''}`}
+            />
+            {isMiddleCheckpoint && (
+              <RectanglePopup
+                x={x}
+                y={y}
+                direction={popupDirection}
+                content={`Checkpoint ${index}`}
+                isVisible={isPassed}
+                pathBounds={pathBounds}
+              />
+            )}
+          </g>
+        );
+      })}
+    </>
+  );
 };
 
-export default Checkpoints;
+export default React.memo(Checkpoints);

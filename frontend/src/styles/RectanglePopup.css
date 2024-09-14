@@ -1,0 +1,34 @@
+/* src/styles/RectanglePopup.css */
+.rectangle-popup {
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .rectangle-popup.visible {
+    opacity: 1;
+  }
+  
+  .rectangle-popup rect {
+    fill: white;
+    stroke: #333;
+    stroke-width: 1;
+  }
+  
+  .rectangle-popup text {
+    font-size: 12px;
+    fill: #333;
+  }
+  
+  .rectangle-popup.left {
+    transform: translateX(-10px);
+  }
+  
+  .rectangle-popup.right {
+    transform: translateX(10px);
+  }
+  
+  .rectangle-popup.visible.left,
+  .rectangle-popup.visible.right {
+    transform: translateX(0);
+  }
+  
