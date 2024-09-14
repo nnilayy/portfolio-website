@@ -4,7 +4,7 @@
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--footer-bg);
+    background-color: transparent;
     color: var(--footer-text);
   }
   

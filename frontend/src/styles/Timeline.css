@@ -6,7 +6,7 @@
 .timeline-section {
   position: relative;
   height: 300vh;
-  background-color: var(--timeline-bg);
+  background-color: transparent;
   padding-top: 50px;
   display: flex;
   justify-content: center;

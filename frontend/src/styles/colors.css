@@ -47,4 +47,9 @@
     rgba(57, 255, 20, 0.2) 0%,
     rgba(57, 255, 20, 0) 70%
   );
+
+  /* Grid Color */
+  --grid-line-color: rgba(57, 255, 20, 0.1);
+  --grid-line-width: 1px;
+  --grid-square-size: 50px;
 }

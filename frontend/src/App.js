@@ -20,13 +20,19 @@ function App() {
       window.removeEventListener('mousemove', moveCursor);
     };
   }, []);
-  
+
   return (
     <div className="App">
-      <Navbar />
-      <Introduction />
-      <Timeline />
-      <Footer />
+      {/* Grid Background */}
+      <div className="grid-background"></div>
+
+      {/* Main Content */}
+      <div className="grid-container">
+        <Navbar />
+        <Introduction />
+        <Timeline />
+        <Footer />
+      </div>
 
       {/* Cursor Follower Circle */}
       <div className="cursor-circle"></div>
