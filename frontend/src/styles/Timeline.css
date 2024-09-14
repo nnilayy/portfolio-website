@@ -5,10 +5,13 @@
 
 .timeline-section {
   position: relative;
-  height: 300vh;
+  height: 100%;
+  width: 100%;
   background-color: transparent;
-  padding-top: 50px;
+  padding-top: 80px;
+  padding-bottom: 10px;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
 }
@@ -17,7 +20,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 80%;
 }
 
 .timeline-svg {

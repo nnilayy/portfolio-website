@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './styles/Timeline.css';
 
-const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 200, frequency = 400 }) => {
+const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequency = 200 }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -16,18 +16,24 @@ const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 200, frequen
     const timelineSection = timelineSectionRef.current;
 
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const offsetTop = timelineSection.offsetTop;
-      const sectionHeight =
-        timelineSection.offsetHeight - window.innerHeight;
-      const scrolled = Math.min(
-        Math.max((scrollTop - offsetTop) / sectionHeight, 0),
-        1
-      );
+      const rect = timelineSection.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate how much of the section is above the viewport
+      const sectionAbove = Math.max(0, -rect.top);
+      
+      // Calculate the scroll progress
+      const scrollProgress = sectionAbove / (rect.height - viewportHeight);
+      
+      // Ensure the scroll progress is between 0 and 1
+      const scrolled = Math.max(0, Math.min(1, scrollProgress));
+      
       setScrollPercent(scrolled);
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initial call to set the correct position on load
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

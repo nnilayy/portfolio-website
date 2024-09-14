@@ -5,8 +5,9 @@
   padding: 250px 20px;
   margin-top: 60px;
   text-align: center;
-  background-color: transparent;
+  background-color: transparents;
   color: var(--introduction-text);
+  border-radius: 15px;
 }
 
 .introduction h1 {

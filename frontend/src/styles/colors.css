@@ -49,7 +49,7 @@
   );
 
   /* Grid Color */
-  --grid-line-color: rgba(57, 255, 20, 0.1);
+  --grid-line-color: rgba(255, 255, 255, 0.094);
   --grid-line-width: 1px;
-  --grid-square-size: 50px;
+  --grid-square-size: 75px;
 }
