@@ -1,26 +1,43 @@
+/* Timeline.css */
+
 @import './common.css';
 @import './colors.css';
 
 .timeline-section {
-    position: relative;
-    height: 300vh; 
-    background-color: var(--timeline-bg);
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .timeline-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .timeline-svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }  
+  position: relative;
+  height: 300vh;
+  background-color: var(--timeline-bg);
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.timeline-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Existing dark path style */
+.timeline-dark-path {
+  stroke: var(--timeline-dark-path);
+  stroke-width: 5;
+  fill: none;
+}
+
+/* Updated bright line style with glow effect */
+.timeline-bright-line {
+  stroke: var(--timeline-bright-line);
+  stroke-width: 5;
+  fill: none;
+  filter: drop-shadow(0 0 6px var(--timeline-bright-line));
+}

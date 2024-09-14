@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './styles/Timeline.css';
 
-const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 150, frequency = 400 }) => {
+const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 200, frequency = 400 }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -60,19 +60,16 @@ const Timeline = ({ lineLength = 1600, lineWidth = 400, amplitude = 150, frequen
           viewBox={`0 0 ${lineWidth} ${lineLength}`} /* Dynamic viewBox */
           preserveAspectRatio="xMidYMin meet"
           className="timeline-svg"
-          width="100%"
           height={lineLength}
         >
           {/* Barely visible path */}
-          <path d={pathData} stroke="#ccc" strokeWidth="4" fill="none" />
+          <path d={pathData} className="timeline-dark-path" />
 
           {/* Brighter path that reveals on scroll */}
           <path
             ref={pathRef}
             d={pathData}
-            stroke="#007bff"
-            strokeWidth="4"
-            fill="none"
+            className="timeline-bright-line" 
             strokeDasharray={totalLength}
             strokeDashoffset={
               totalLength - scrollPercent * totalLength

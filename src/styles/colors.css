@@ -1,29 +1,36 @@
-/* colors.css */
 :root {
   /* General colors */
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --background-color: #ffffff;
-  --text-color: #b7a0a0;
+  --primary-color: #39ff14; /* Neon Green */
+  --secondary-color: #0ff; /* Neon Cyan */
+  --background-color: #000000; /* Pitch Black */
+  --text-color: #e0e0e0; /* Light Gray for readability */
 
   /* App specific colors */
-  --app-header-bg: #282c34;
-  --app-header-text: #ffffff;
-  --app-link: #61dafb;
+  --app-header-bg: #000000; /* Pitch Black */
+  --app-header-text: #39ff14; /* Neon Green */
+  --app-link: #0ff; /* Neon Cyan */
 
   /* Navbar colors */
-  --navbar-bg: #323030;
-  --navbar-text: #ffffff;
-  --navbar-link-hover: #277fddd3;
+  --navbar-bg: #000000; /* Pitch Black */
+  --navbar-text: #e0e0e0; /* Light Gray */
+  --navbar-link-hover: #39ff14; /* Neon Green */
 
   /* Footer colors */
-  --footer-bg: #000000;
-  --footer-text: #ffffff;
+  --footer-bg: #000000; /* Pitch Black */
+  --footer-text: #e0e0e0; /* Light Gray */
 
   /* Introduction colors */
-  --introduction-bg: #625c5c;
-  --introduction-text: #c9baba;
+  --introduction-bg: #000000; /* Pitch Black */
+  --introduction-text: #e0e0e0; /* Light Gray */
+  --introduction-heading: #39ff14; /* Neon Green */
 
   /* Timeline colors */
-  --timeline-bg: #ffffff;
+  --timeline-bg: #000000; /* Pitch Black */
+  --timeline-dark-path: #333333; /* Dark Gray */
+  --timeline-bright-line: #ffffff; /* Neon Green */
+
+  /* Scrollbar colors */
+  --scrollbar-track: #111111; /* Very Dark Gray */
+  --scrollbar-thumb: rgb(255, 255, 255); /* Neon Cyan */
+  --scrollbar-thumb-hover: #39ff14; /* Neon Green */
 }

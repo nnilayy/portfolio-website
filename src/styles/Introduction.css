@@ -2,8 +2,8 @@
 @import './colors.css';
 
 .introduction {
-  padding: 250px 20px; /* Increased padding to make the section larger */
-  margin-top: 60px; /* Ensure content is not hidden behind navbar */
+  padding: 250px 20px;
+  margin-top: 60px;
   text-align: center;
   background-color: var(--introduction-bg);
   color: var(--introduction-text);
@@ -12,6 +12,7 @@
 .introduction h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: var(--introduction-heading); /* Neon color for heading */
 }
 
 .introduction p {

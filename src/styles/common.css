@@ -1,13 +1,20 @@
 @import './colors.css';
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700; /* Bolder for headings */
-}
-/* Resetting margins, padding, and box-sizing for all elements */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+.header {
+  width:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bolder for headings */
+  color: var(--introduction-heading); /* Use neon color for headings */
+  text-shadow: 0 0 5px var(--introduction-heading);
+}
+
 body {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400; /* Normal weight */
@@ -15,4 +22,50 @@ body {
     font-style: normal;
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  border: 3px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: 0 0 5px var(--scrollbar-thumb-hover);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
 }

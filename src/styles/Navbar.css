@@ -2,27 +2,29 @@
 @import './colors.css';
 
 .navbar {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--navbar-bg);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .navbar-links {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .navbar-links a {
-    color: var(--navbar-text);
-    margin-left: 20px;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .navbar-links a:hover {
-    color: var(--navbar-link-hover);
-  }
-  
+  width: 100%;
+  padding: 20px;
+  background-color: var(--navbar-bg);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-links a {
+  color: var(--navbar-text);
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: var(--navbar-link-hover);
+  text-shadow: 0 0 5px var(--navbar-link-hover);
+}
