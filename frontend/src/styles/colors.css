@@ -56,4 +56,8 @@
   --checkpoint-default-color: #333333; /* Dark Gray */
   --checkpoint-passed-color: #ffffff; /* White */
   --checkpoint-glow-color: #ffffff; /* White glow */
+
+  /* CONTACTS COLORS */
+  --footer-link-svg-fill: #ffffff; /* Neon Green */
+  --footer-link-svg-hover: rgb(255, 255, 255); /* Neon Cyan */
 }

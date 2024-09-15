@@ -56,7 +56,7 @@ const Timeline = ({
     <section id="timeline-section" className="timeline-section" ref={timelineSectionRef}>
       <div className="timeline-container">
         <svg
-          viewBox={`0 0 ${lineWidth} ${lineLength}`}
+          viewBox={`0 -15 ${lineWidth} ${lineLength+35}`}
           preserveAspectRatio="xMidYMin meet"
           className="timeline-svg"
           height={lineLength}
