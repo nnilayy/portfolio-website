@@ -1,4 +1,7 @@
 /* src/styles/RectanglePopup.css */
+@import './common.css';
+@import './colors.css';
+
 .rectangle-popup {
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -9,9 +12,9 @@
   }
   
   .rectangle-popup rect {
-    fill: rgba(255, 255, 255, 0.395);
-    stroke: #fdfdfd;
-    stroke-width: 1;
+    fill: rgba(255, 255, 255, 0.402);
+    stroke: #333;
+    /* stroke-width: 1; */
   }
   
   .rectangle-popup text {
@@ -32,3 +35,29 @@
     transform: translateX(0);
   }
   
+  .rectangle-popup-header{
+    background-color: rgb(100, 82, 82);
+    color: rgba(255, 255, 255, 0.308);
+    padding: 10px;
+    /* margin:10px */
+    border-radius: 10px 10px 0px 0px;
+    
+  }
+  .rectangle-popup-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .rectangle-popup-content-left{
+    background-color: rgb(0, 208, 59);
+    /* width:100%; */
+    padding: 10px;
+  }
+
+  .rectangle-popup-content-right{
+    background-color: rgb(15, 42, 130);
+    /* width: 100%; */
+    padding:10px;
+  }
