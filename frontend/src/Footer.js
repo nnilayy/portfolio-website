@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-center">
-          <p>© 2023 Your Name. All rights reserved.</p>
+          <p>© 2024 Nilay Kumar Bhatnagar. All rights reserved.</p>
         </div>
         <div className="footer-right"></div>
       </div>
