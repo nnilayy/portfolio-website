@@ -43,6 +43,8 @@
   stroke-width: 5;
   fill: none;
   filter: drop-shadow(0 0 6px var(--timeline-bright-line));
+  text-shadow: 0 0 6px var(--timeline-bright-line);
+  box-shadow: 0 0 6px var(--timeline-bright-line);
 }
 
 /* Media Query for Mobile Devices */
