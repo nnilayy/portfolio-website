@@ -60,4 +60,11 @@
   /* CONTACTS COLORS */
   --footer-link-svg-fill: #ffffff; /* Neon Green */
   --footer-link-svg-hover: rgb(255, 255, 255); /* Neon Cyan */
+
+  /* Back To Home */
+  --back-to-home-container-bg: transparent; /* Light Gray */
+  --back-to-home-button-bg: transparent; /* Blue */
+  --back-to-home-button-hover-bg: rgb(244, 227, 140);/* Dark Blue */
+  --back-to-home-button-text: rgb(236, 227, 183); /* White */
+  --back-to-home-button-border: rgb(236, 227, 183); /* Blue */
 }
