@@ -33,11 +33,11 @@
   }
 
   .introduction h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .introduction p {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.4;
   }
 }
