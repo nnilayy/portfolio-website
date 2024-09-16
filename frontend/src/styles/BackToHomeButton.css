@@ -48,15 +48,12 @@
   .back-to-home-button {
     padding: 0.5rem;
     border-radius: 50%;
+    cursor: none;
   }
 
   .back-to-home-button span {
     font-size: 0px;
   }
-
-  /* .back-to-home-button svg{
-    margin-right: 15px;
-  }  */
 
   .home-icon {
     width: 30px;
