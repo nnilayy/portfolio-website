@@ -1,38 +1,65 @@
+/* BackToHomeButton.css */
+
 .back-to-home-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-    background-color: var(--back-to-home-container-bg);
-  }
-  
-  .back-to-home-button {
-    display: flex;
-    align-items: center;
-    background-color: var(--back-to-home-button-bg);
-    color: var(--back-to-home-button-text);
-    filter: drop-shadow(0 0 10px var(--back-to-home-button-hover-bg));
-    box-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
-    text-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
-    padding: 15px 20px;
-    border: 3px solid var(--back-to-home-button-border);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: box-shadow, text-shadow, 0.2s ease;
-  }
-  
-  .back-to-home-button:hover {
-    box-shadow: 0 0 15px var(--back-to-home-button-hover-bg);
-    text-shadow: 0 0 15px var(--back-to-home-button-hover-bg);
-  }
-  
-  .back-to-home-button svg {
-    margin-right: 10px;
-  }
-  
-.home-icon{
-    filter: brightness(0) invert(1) drop-shadow(0 0 15px var(--back-to-home-button-hover-bg));
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: var(--back-to-home-container-bg);
 }
 
-.home-icon:hover{
-    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--back-to-home-button-hover-bg));
+.back-to-home-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--back-to-home-button-bg);
+  color: var(--back-to-home-button-text);
+  filter: drop-shadow(0 0 10px var(--back-to-home-button-hover-bg));
+  box-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
+  text-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
+  padding: 15px 20px;
+  border: 3px solid var(--back-to-home-button-border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow, text-shadow, 0.2s ease;
+}
+
+.back-to-home-button:hover {
+  box-shadow: 0 0 15px var(--back-to-home-button-hover-bg);
+  text-shadow: 0 0 15px var(--back-to-home-button-hover-bg);
+}
+
+.back-to-home-button svg {
+  margin-right: 10px;
+}
+
+.home-icon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 15px var(--back-to-home-button-hover-bg));
+}
+
+.home-icon:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--back-to-home-button-hover-bg));
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .back-to-home-container {
+    justify-content: flex-end;
+  }
+
+  .back-to-home-button {
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+
+  .back-to-home-button span {
+    font-size: 0px;
+  }
+
+  /* .back-to-home-button svg{
+    margin-right: 15px;
+  }  */
+
+  .home-icon {
+    width: 30px;
+    height: 30px;
+  }
 }

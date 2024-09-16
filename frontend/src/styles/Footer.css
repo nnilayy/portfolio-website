@@ -1,50 +1,91 @@
+/* Footer.css */
+
 @import './common.css';
 @import './colors.css';
 
 .footer {
-    padding: 20px;
-    background-color: transparent;
-    color: var(--footer-text);
+  padding: 20px;
+  background-color: transparent;
+  color: var(--footer-text);
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .footer-center {
-    flex: 2;
-    text-align: center;
-    font-size: 20px;
+  flex: 2;
+  text-align: center;
+  font-size: 20px;
 }
 
 .footer-right {
-    flex: 1;
+  flex: 1;
 }
 
 .footer-links {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .footer-link {
-    display: inline-block;
-    transition: filter 0.3s ease;
+  display: inline-block;
+  transition: filter 0.3s ease;
 }
 
 .footer-icon {
-    width: 50px;
-    height: 50px;
-    filter: brightness(0) invert(1) drop-shadow(0 0 10px var(--footer-link-svg-hover)); /* This makes the icons white */
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px var(--footer-link-svg-hover));
 }
 
-.footer-link:hover, .footer-icon:hover {
-    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--footer-link-svg-hover));
+.footer-link:hover,
+.footer-icon:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--footer-link-svg-hover));
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .footer {
+        padding: 8px;
+    }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+  .footer-right {
+    flex: 1;
+
+}
+
+  .footer-center {
+    flex: 2;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+
+  .footer-icon {
+    width: 25px;
+    height: 25px;
+  }
 }

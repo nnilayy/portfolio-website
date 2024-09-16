@@ -11,10 +11,9 @@
   padding-top: 80px;
   padding-bottom: 10px;
   display: flex;
-  background-color: transparent;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .timeline-container {
@@ -33,17 +32,32 @@
   max-width: 100%;
 }
 
-/* Existing dark path style */
 .timeline-dark-path {
   stroke: var(--timeline-dark-path);
   stroke-width: 5;
   fill: none;
 }
 
-/* Updated bright line style with glow effect */
 .timeline-bright-line {
   stroke: var(--timeline-bright-line);
   stroke-width: 5;
   fill: none;
   filter: drop-shadow(0 0 6px var(--timeline-bright-line));
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .timeline-section {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .timeline-container {
+    padding: 0 20px;
+  }
+
+  .timeline-svg {
+    width: 100%;
+    height: auto;
+  }
 }

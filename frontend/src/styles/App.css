@@ -32,4 +32,16 @@
 .grid-container {
   position: relative;
   z-index: 1;
+  padding: 0 20px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .grid-container {
+    padding: 0 10px;
+  }
+
+  .grid-background {
+    background-size: calc(var(--grid-square-size) / 1.5) calc(var(--grid-square-size) / 1.5);
+  }
 }
