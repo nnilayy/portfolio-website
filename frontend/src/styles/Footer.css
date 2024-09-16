@@ -94,6 +94,7 @@
 @media (min-width:769px) and (max-width:1400px) {
     .footer {
         padding: 10px;
+        padding-bottom: 20px;
     }
     .footer-center {
         font-size: 14px;
