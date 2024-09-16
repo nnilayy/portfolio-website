@@ -15,7 +15,7 @@
   filter: drop-shadow(0 0 10px var(--back-to-home-button-hover-bg));
   box-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
   text-shadow: 0 0 5px var(--back-to-home-button-hover-bg);
-  padding: 15px 20px;
+  padding: 8px 8px;
   border: 3px solid var(--back-to-home-button-border);
   border-radius: 10px;
   cursor: pointer;
@@ -32,6 +32,8 @@
 }
 
 .home-icon {
+  width: 35px;
+  height: 35px;
   filter: brightness(0) invert(1) drop-shadow(0 0 15px var(--back-to-home-button-hover-bg));
 }
 
@@ -58,5 +60,15 @@
   .home-icon {
     width: 30px;
     height: 30px;
+  }
+}
+
+@media (min-width:769px) and (max-width:1400px) {
+  .back-to-home-button span {
+    font-size: 10px;
+  }
+  .home-icon {
+    width: 25px;
+    height: 25px;
   }
 }
