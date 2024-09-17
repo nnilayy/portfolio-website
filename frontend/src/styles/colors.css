@@ -15,8 +15,8 @@
 
   /* Navbar colors */
   --navbar-bg: #000000; /* Pitch Black */
-  --navbar-text: #e0e0e0; /* Light Gray */
-  --navbar-link-hover: #39ff14; /* Neon Green */
+  --navbar-text: #ffffff; /* Light Gray */
+  --navbar-link-hover: #ffffff; /* Neon Green */
 
   /* Footer colors */
   --footer-bg: #000000; /* Pitch Black */
@@ -45,8 +45,8 @@
   /* Cursor colors */
   --cursor-circle-gradient: radial-gradient(
     circle,
-    rgba(57, 255, 20, 0.2) 0%,
-    rgba(57, 255, 20, 0) 70%
+    rgba(131, 138, 39, 0.2) 0%,
+    rgba(106, 164, 96, 0) 70%
   );
 
   /* Grid Color */
