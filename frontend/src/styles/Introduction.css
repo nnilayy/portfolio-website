@@ -68,7 +68,7 @@
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .introduction {
-    padding: 200px 10px;
+    padding: 180px 10px;
     margin-top: 50px;
   }
 
