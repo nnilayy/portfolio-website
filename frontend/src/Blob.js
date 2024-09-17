@@ -18,9 +18,9 @@ const Blob = ({ color, size, top, left, delay }) => (
 
 export const BlobContainer = () => (
   <div className="blob-container">
-    <Blob color="#ffffff" size="300px" top="10%" left="10%" delay={0} />
-    <Blob color="#39ff14" size="400px" top="40%" left="50%" delay={2} />
-    <Blob color="#0ff" size="200px" top="40%" left="30%" delay={5} />
+    <Blob color="#7e7b77" size="30vw" top="10%" left="5%" delay={0} />
+    <Blob color="rgba(105, 42, 213)" size="25vw" top="20%" left="45%" delay={3} />
+    <Blob color="rgb(216, 216, 42)" size="30vw" top="20%" left="60%" delay={5} />
   </div>
 );
 

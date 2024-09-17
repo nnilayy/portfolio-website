@@ -70,5 +70,7 @@
   --back-to-home-button-border: rgb(236, 227, 183); /* Blue */
 
   /* Blob Color */
-  --blob-color: #39ff14; /* Neon Green */
+  --blob-1-color: #7e7b77; /* Neon Green */
+  --blob-2-color: rgba(105, 42, 213, 0.625); /* Neon Cyan */
+  --blob-3-color: rgb(216, 216, 42); /* Yellow */
 }
