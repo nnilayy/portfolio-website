@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react'
 import './styles/Timeline.css';
 import Checkpoints from './Checkpoints';
 
-<<<<<<< HEAD
 const Timeline = ({
   lineLength = 1600,
   lineWidth = 600,
@@ -10,9 +9,6 @@ const Timeline = ({
   frequency = 400,
   numCheckpoints = 3,
 }) => {
-=======
-const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequency = 200 }) => {
->>>>>>> main
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -35,36 +31,12 @@ const Timeline = ({ lineLength = 1600, lineWidth = 600, amplitude = 200, frequen
     const timelineSection = timelineSectionRef.current;
     if (!timelineSection) return;
 
-<<<<<<< HEAD
     const rect = timelineSection.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
     const sectionAbove = Math.max(0, -rect.top);
     const scrollProgress = sectionAbove / (rect.height - viewportHeight);
     const scrolled = Math.max(0, Math.min(1, scrollProgress));
     setScrollPercent(scrolled);
-=======
-    const handleScroll = () => {
-      const rect = timelineSection.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate how much of the section is above the viewport
-      const sectionAbove = Math.max(0, -rect.top);
-      
-      // Calculate the scroll progress
-      const scrollProgress = sectionAbove / (rect.height - viewportHeight);
-      
-      // Ensure the scroll progress is between 0 and 1
-      const scrolled = Math.max(0, Math.min(1, scrollProgress));
-      
-      setScrollPercent(scrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    // Initial call to set the correct position on load
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
->>>>>>> main
   }, []);
 
   useEffect(() => {

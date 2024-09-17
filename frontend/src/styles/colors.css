@@ -68,4 +68,7 @@
   --back-to-home-button-hover-bg: rgb(244, 227, 140);/* Dark Blue */
   --back-to-home-button-text: rgb(236, 227, 183); /* White */
   --back-to-home-button-border: rgb(236, 227, 183); /* Blue */
+
+  /* Blob Color */
+  --blob-color: #39ff14; /* Neon Green */
 }

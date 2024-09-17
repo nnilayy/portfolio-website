@@ -1,21 +1,51 @@
-/* Introduction.css */
-
+/* src/styles/Introduction.css */
 @import './common.css';
 @import './colors.css';
 
 .introduction {
+  position: relative;
   padding: 250px 20px;
   margin-top: 60px;
   text-align: center;
-  background-color: transparent;
   color: var(--introduction-text);
-  border-radius: 15px;
+  overflow: hidden;
+  background: 
+    linear-gradient(
+      60deg, 
+      rgba(55, 27, 27, 0.288) 0%, 
+      rgba(93, 17, 165, 0.213) 50%, 
+      rgba(2, 27, 2, 0.509) 100%
+    );
+}
+
+.introduction::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+    rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
 }
 
 .introduction h1 {
   font-size: 36px;
   margin-bottom: 20px;
   color: var(--introduction-heading);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
 }
 
 .introduction p {
@@ -23,12 +53,22 @@
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+.introduction.visible h1,
+.introduction.visible p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .introduction {
-    padding: 100px 10px;
+    padding: 200px 10px;
     margin-top: 50px;
   }
 
