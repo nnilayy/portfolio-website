@@ -30,10 +30,3 @@
     }
   }
   
-  /* Media query for responsive blob sizes */
-  @media (max-width: 768px) {
-    .blob {
-      transform: scale(0.8);
-    }
-  }
-  
