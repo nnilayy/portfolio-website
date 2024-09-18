@@ -44,6 +44,8 @@
   fill: none;
   filter: drop-shadow(0 0 6px var(--timeline-bright-line));
   -webkit-filter: drop-shadow(0 0 6px var(--timeline-bright-line));
+  -moz-filter: drop-shadow(0 0 6px var(--timeline-bright-line));
+  -ms-filter: drop-shadow(0 0 6px var(--timeline-bright-line));
 }
 
 /* Media Query for Mobile Devices */
