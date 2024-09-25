@@ -1,3 +1,4 @@
+// Checkpoints.js
 import React, { useMemo } from 'react';
 import './styles/Checkpoints.css';
 import RectanglePopup from './RectanglePopup';
@@ -19,7 +20,7 @@ const calculatePathBounds = (pathData) => {
   return { minX, maxX, totalPathLength, tempPath };
 };
 
-const Checkpoints = ({ numCheckpoints, pathData, scrollPercent }) => {
+const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent }) => {
   const { checkpoints, pathBounds } = useMemo(() => {
     const totalCheckpoints = numCheckpoints + 2;
     const { minX, maxX, totalPathLength, tempPath } = calculatePathBounds(pathData);
@@ -35,16 +36,17 @@ const Checkpoints = ({ numCheckpoints, pathData, scrollPercent }) => {
         isMiddleCheckpoint: i > 0 && i < totalCheckpoints - 1,
         popupDirection: i % 2 === 0 ? 'left' : 'right',
         index: i,
-        position
+        position,
+        data: data[i - 1] || {}, // Adjust index since we have extra checkpoints
       };
     });
 
     return { checkpoints, pathBounds: { minX, maxX } };
-  }, [numCheckpoints, pathData]);
+  }, [numCheckpoints, data, pathData]);
 
   return (
     <>
-      {checkpoints.map(({ x, y, isMiddleCheckpoint, popupDirection, index, position }) => {
+      {checkpoints.map(({ x, y, isMiddleCheckpoint, popupDirection, index, position, data }) => {
         const isPassed = scrollPercent >= position;
         return (
           <g key={index}>
@@ -54,12 +56,12 @@ const Checkpoints = ({ numCheckpoints, pathData, scrollPercent }) => {
               r={10}
               className={`checkpoint ${isPassed ? 'passed' : ''}`}
             />
-            {isMiddleCheckpoint && (
+            {isMiddleCheckpoint && data.content && (
               <RectanglePopup
                 x={x}
                 y={y}
                 direction={popupDirection}
-                content={`Checkpoint ${index}`}
+                content={data.content}
                 isVisible={isPassed}
                 pathBounds={pathBounds}
               />

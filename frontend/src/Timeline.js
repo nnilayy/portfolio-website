@@ -1,3 +1,4 @@
+// Timeline.js
 import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import './styles/Timeline.css';
 import Checkpoints from './Checkpoints';
@@ -7,7 +8,8 @@ const Timeline = ({
   lineWidth = 600,
   amplitude = 200,
   frequency = 400,
-  numCheckpoints = 3,
+  numCheckpoints = 0,
+  data = [],
 }) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
@@ -53,15 +55,17 @@ const Timeline = ({
   }, [handleScroll]);
 
   return (
-    <section id="timeline-section" className="timeline-section" ref={timelineSectionRef}>
+    <section className="timeline-section" ref={timelineSectionRef}>
       <div className="timeline-container">
         <svg
-          viewBox={`0 -15 ${lineWidth} ${lineLength+35}`}
+          viewBox={`0 -15 ${lineWidth} ${lineLength + 35}`}
           preserveAspectRatio="xMidYMin meet"
           className="timeline-svg"
           height={lineLength}
         >
+          {/* Dark Path */}
           <path d={generatePathData} className="timeline-dark-path" />
+          {/* Bright Path */}
           <path
             ref={pathRef}
             d={generatePathData}
@@ -69,8 +73,10 @@ const Timeline = ({
             strokeDasharray={totalLength}
             strokeDashoffset={totalLength - scrollPercent * totalLength}
           />
+          {/* Checkpoints */}
           <Checkpoints
             numCheckpoints={numCheckpoints}
+            data={data}
             pathData={generatePathData}
             scrollPercent={scrollPercent}
           />
