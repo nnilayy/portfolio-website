@@ -16,15 +16,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
   }
   
   .work-section-button {
     margin: 5px 10px;
     padding: 15px 30px;
     cursor: pointer;
-    border-radius: 5px;
-    border: 0.5px solid white;
-    border-color: drop-shadow(0 0 10px white);
+    border-radius: 10px;
+    border: 0.5px solid rgba(100, 100, 100, 0.469);
     background-color: transparent;
     color: white;
     filter: drop-shadow(0 0 10px white);
@@ -33,15 +33,15 @@
   }
 
   .work-section-button:hover {
-    background-color: white;
-    color: #000;
-    text-shadow: 0 0 15px white;
-    box-shadow: 0 0 10px white;
+    background-color: rgba(145, 145, 145, 0.075);
+    color: white;
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.114);
   }
   .work-section-button.active {
     background-color: white;
     color: #000;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 5px white;
   }
   
   .timeline-wrapper {
