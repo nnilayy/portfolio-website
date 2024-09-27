@@ -3,6 +3,7 @@
 @import './common.css';
 @import './colors.css';
 
+
 .timeline-section {
   position: relative;
   height: 100%;
@@ -10,19 +11,21 @@
   background-color: transparent;
   padding-top: 80px;
   padding-bottom: 10px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* background-color: pink; */
 }
 
 .timeline-container {
   display: flex;
   justify-content: center;
-  width: 100%;
-  max-width: 100%;
+  padding: 10px;
+  /* width: 100%; */
+  /* max-width: 100%; */
   background-color: transparent;
-  padding: 0 60px;
+  /* padding: 0 60px; */
 }
 
 .timeline-svg {

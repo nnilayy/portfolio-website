@@ -8,51 +8,51 @@ const WorkSections = () => {
 
   const sections = ['Blogs', 'Research', 'Internships', 'Projects', 'Extensions'];
 
-  // Define data for each section
+  // Define data for each section with multiple pages per checkpoint
   const sectionData = {
     Blogs: {
       numCheckpoints: 3,
       data: [
-        { content: 'Blog Post 1' },
-        { content: 'Blog Post 2' },
-        { content: 'Blog Post 3' },
+        { content: ['Blog Post 1 - Page 1', 'Blog Post 1 - Page 2'] },
+        { content: ['Blog Post 2 - Only Page'] },
+        { content: ['Blog Post 3 - Page 1', 'Blog Post 3 - Page 2', 'Blog Post 3 - Page 3'] },
       ],
     },
     Research: {
       numCheckpoints: 4,
       data: [
-        { content: 'Research Paper 1' },
-        { content: 'Research Paper 2' },
-        { content: 'Research Paper 3' },
-        { content: 'Research Paper 4' },
+        { content: ['Research Paper 1 - Page 1', 'Research Paper 1 - Page 2'] },
+        { content: ['Research Paper 2 - Only Page'] },
+        { content: ['Research Paper 3 - Page 1', 'Research Paper 3 - Page 2'] },
+        { content: ['Research Paper 4 - Page 1', 'Research Paper 4 - Page 2', 'Research Paper 4 - Page 3'] },
       ],
     },
     Internships: {
       numCheckpoints: 5,
       data: [
-        { content: 'Internship 1' },
-        { content: 'Internship 2' },
-        { content: 'Internship 3' },
-        { content: 'Internship 4' },
-        { content: 'Internship 5' },
+        { content: ['Internship 1 - Page 1'] },
+        { content: ['Internship 2 - Page 1', 'Internship 2 - Page 2'] },
+        { content: ['Internship 3 - Only Page'] },
+        { content: ['Internship 4 - Page 1', 'Internship 4 - Page 2', 'Internship 4 - Page 3'] },
+        { content: ['Internship 5 - Page 1', 'Internship 5 - Page 2'] },
       ],
     },
     Projects: {
       numCheckpoints: 6,
       data: [
-        { content: 'Project 1' },
-        { content: 'Project 2' },
-        { content: 'Project 3' },
-        { content: 'Project 4' },
-        { content: 'Project 5' },
-        { content: 'Project 6' },
+        { content: ['Project 1 - Only Page'] },
+        { content: ['Project 2 - Page 1', 'Project 2 - Page 2'] },
+        { content: ['Project 3 - Page 1', 'Project 3 - Page 2', 'Project 3 - Page 3'] },
+        { content: ['Project 4 - Only Page'] },
+        { content: ['Project 5 - Page 1', 'Project 5 - Page 2'] },
+        { content: ['Project 6 - Page 1', 'Project 6 - Page 2'] },
       ],
     },
     Extensions: {
       numCheckpoints: 2,
       data: [
-        { content: 'Extension 1' },
-        { content: 'Extension 2' },
+        { content: ['Extension 1 - Only Page'] },
+        { content: ['Extension 2 - Page 1', 'Extension 2 - Page 2'] },
       ],
     },
   };
@@ -79,12 +79,10 @@ const WorkSections = () => {
 
       {/* Timeline for Selected Section */}
       {selectedSection && (
-        <div className="timeline-wrapper">
-          <Timeline
-            numCheckpoints={sectionData[selectedSection].numCheckpoints}
-            data={sectionData[selectedSection].data}
-          />
-        </div>
+        <Timeline
+          numCheckpoints={sectionData[selectedSection].numCheckpoints}
+          data={sectionData[selectedSection].data}
+        />
       )}
     </div>
   );
