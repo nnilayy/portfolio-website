@@ -1,6 +1,6 @@
 // RectanglePopup.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './styles/RectanglePopup.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -16,7 +16,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
 
   const popupY = y - popupHeight / 2 + 80;
 
-  // Initialize currentPage state
+  // Page state for navigation
   const [currentPage, setCurrentPage] = useState(0);
 
   // Reset currentPage when content changes or when popup becomes visible
@@ -38,11 +38,39 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
     setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
   };
 
+  // Refs for swipe detection
+  const startXRef = useRef(0);
+  const deltaXRef = useRef(0);
+
+  // Touch event handlers for swipe detection
+  const handleTouchStart = (e) => {
+    startXRef.current = e.touches[0].clientX;
+    deltaXRef.current = 0;
+  };
+
+  const handleTouchMove = (e) => {
+    deltaXRef.current = e.touches[0].clientX - startXRef.current;
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = deltaXRef.current;
+    const threshold = 50; // Minimum swipe distance in pixels
+
+    if (deltaX > threshold) {
+      // Swiped right
+      handlePrev();
+    } else if (deltaX < -threshold) {
+      // Swiped left
+      handleNext();
+    }
+
+    // Reset deltaXRef
+    deltaXRef.current = 0;
+  };
+
   return (
     <g
-      className={`rectangle-popup ${direction} ${
-        isVisible ? 'visible' : ''
-      }`}
+      className={`rectangle-popup ${direction} ${isVisible ? 'visible' : ''}`}
     >
       <foreignObject
         x={popupX}
@@ -53,12 +81,15 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
         <div
           xmlns="http://www.w3.org/1999/xhtml"
           className="popup-container"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div className="popup-header">
             <button className="left-button" onClick={handlePrev}>
               &lt;
             </button>
-            {/* Replace page indicator text with circles */}
+            {/* Page indicator dots */}
             <div className="page-indicator">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <div
@@ -74,7 +105,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
             </button>
           </div>
 
-          {/* Add TransitionGroup and CSSTransition for animating content */}
+          {/* Content with transition animations */}
           <div className="popup-content">
             <TransitionGroup>
               <CSSTransition
@@ -88,7 +119,6 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
               </CSSTransition>
             </TransitionGroup>
           </div>
-          {/* End of TransitionGroup and CSSTransition */}
         </div>
       </foreignObject>
     </g>
