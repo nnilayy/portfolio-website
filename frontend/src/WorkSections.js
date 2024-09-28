@@ -1,69 +1,51 @@
 // WorkSections.js
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Timeline from './Timeline';
 import './styles/WorkSections.css';
+import axios from 'axios';
 
 const WorkSections = () => {
   const [selectedSection, setSelectedSection] = useState(null);
+  const [sections, setSections] = useState([]);
+  const [sectionColors, setSectionColors] = useState({});
+  const [sectionData, setSectionData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [loadingSection, setLoadingSection] = useState(false);
 
-  const sections = ['Blogs', 'Research', 'Internships', 'Projects', 'Extensions'];
+  useEffect(() => {
+    // Fetch sections, sectionColors, and sectionData from the backend
+    const fetchData = async () => {
+      try {
+        const [sectionsRes, colorsRes, dataRes] = await Promise.all([
+          axios.get('http://127.0.0.1:8000/sections'),
+          axios.get('http://127.0.0.1:8000/section_colors'),
+          axios.get('http://127.0.0.1:8000/section_data'),
+        ]);
+        setSections(sectionsRes.data);
+        setSectionColors(colorsRes.data);
+        setSectionData(dataRes.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data from backend:', error);
+        setLoading(false);
+      }
+    };
 
-  // Define data for each section with multiple pages per checkpoint
-  const sectionData = {
-    Blogs: {
-      numCheckpoints: 3,
-      data: [
-        { content: ['Blog Post 1 - Page 1', 'Blog Post 1 - Page 2'] },
-        { content: ['Blog Post 2 - Only Page'] },
-        { content: ['Blog Post 3 - Page 1', 'Blog Post 3 - Page 2', 'Blog Post 3 - Page 3'] },
-      ],
-    },
-    Research: {
-      numCheckpoints: 4,
-      data: [
-        { content: ['Research Paper 1 - Page 1', 'Research Paper 1 - Page 2'] },
-        { content: ['Research Paper 2 - Only Page'] },
-        { content: ['Research Paper 3 - Page 1', 'Research Paper 3 - Page 2'] },
-        { content: ['Research Paper 4 - Page 1', 'Research Paper 4 - Page 2', 'Research Paper 4 - Page 3'] },
-      ],
-    },
-    Internships: {
-      numCheckpoints: 5,
-      data: [
-        { content: ['Internship 1 - Page 1'] },
-        { content: ['Internship 2 - Page 1', 'Internship 2 - Page 2'] },
-        { content: ['Internship 3 - Only Page'] },
-        { content: ['Internship 4 - Page 1', 'Internship 4 - Page 2', 'Internship 4 - Page 3'] },
-        { content: ['Internship 5 - Page 1', 'Internship 5 - Page 2'] },
-      ],
-    },
-    Projects: {
-      numCheckpoints: 6,
-      data: [
-        { content: ['Project 1 - Only Page'] },
-        { content: ['Project 2 - Page 1', 'Project 2 - Page 2'] },
-        { content: ['Project 3 - Page 1', 'Project 3 - Page 2', 'Project 3 - Page 3'] },
-        { content: ['Project 4 - Only Page'] },
-        { content: ['Project 5 - Page 1', 'Project 5 - Page 2'] },
-        { content: ['Project 6 - Page 1', 'Project 6 - Page 2'] },
-      ],
-    },
-    Extensions: {
-      numCheckpoints: 2,
-      data: [
-        { content: ['Extension 1 - Only Page'] },
-        { content: ['Extension 2 - Page 1', 'Extension 2 - Page 2'] },
-      ],
-    },
-  };
+    fetchData();
+  }, []);
 
   const handleSectionClick = (section) => {
-    // Set the selected section; if the same section is clicked, deselect it
+    // Toggle selected section
     setSelectedSection((prevSection) => (prevSection === section ? null : section));
   };
 
+  // if (loading) {
+  //   return <div>Loading...</div>; // Or any loading indicator
+  // }
+
   return (
-    <div className="work-sections">
+    <div id="work" className="work-sections">
       {/* Section Buttons */}
       <div className="section-buttons">
         {sections.map((section) => (
@@ -78,11 +60,14 @@ const WorkSections = () => {
       </div>
 
       {/* Timeline for Selected Section */}
-      {selectedSection && (
+      {selectedSection && sectionData[selectedSection] && sectionColors[selectedSection] ? (
         <Timeline
           numCheckpoints={sectionData[selectedSection].numCheckpoints}
           data={sectionData[selectedSection].data}
+          colors={sectionColors[selectedSection]}
         />
+      ) : (
+        selectedSection && <div>No data available for this section.</div>
       )}
     </div>
   );

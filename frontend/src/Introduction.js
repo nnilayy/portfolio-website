@@ -29,7 +29,7 @@ const Introduction = () => {
   }, []);
 
   return (
-    <section className="introduction" ref={introRef}>
+    <section id="introduction" className="introduction" ref={introRef}>
       <BlobContainer />
       <div className="content">
         <h1>Hello, I'm [Your Name]</h1>

@@ -10,7 +10,8 @@ const Timeline = ({
   frequency = 400,
   numCheckpoints = 0,
   data = [],
-}) => {
+  colors = {},   // Accept colors prop
+}) =>  {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -64,14 +65,22 @@ const Timeline = ({
           height={lineLength}
         >
           {/* Dark Path */}
-          <path d={generatePathData} className="timeline-dark-path" />
+          <path
+            d={generatePathData}
+            stroke={colors.timelineDarkPath}
+            strokeWidth={5}
+            fill="none"
+          />
           {/* Bright Path */}
           <path
             ref={pathRef}
             d={generatePathData}
-            className="timeline-bright-line"
+            stroke="#fff"
+            strokeWidth={5}
+            fill="none"
             strokeDasharray={totalLength}
             strokeDashoffset={totalLength - scrollPercent * totalLength}
+            style={{ filter: `drop-shadow(0 0 6px ${colors.timelineBrightLine})` }}
           />
           {/* Checkpoints */}
           <Checkpoints
@@ -79,11 +88,11 @@ const Timeline = ({
             data={data}
             pathData={generatePathData}
             scrollPercent={scrollPercent}
+            colors={colors} // Pass colors to Checkpoints
           />
         </svg>
       </div>
     </section>
   );
 };
-
 export default Timeline;

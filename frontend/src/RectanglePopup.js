@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './styles/RectanglePopup.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => {
+const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, colors }) => {
   const popupWidth = 220;
   const popupHeight = 200;
   const margin = 20;
@@ -85,18 +85,15 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div className="popup-header">
+          <div className="popup-header" style={{ backgroundColor: colors.rectanglePopupBg }}>
             <button className="left-button" onClick={handlePrev}>
               &lt;
             </button>
-            {/* Page indicator dots */}
             <div className="page-indicator">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <div
                   key={index}
-                  className={`indicator-dot ${
-                    index === currentPage ? 'active' : ''
-                  }`}
+                  className={`indicator-dot ${index === currentPage ? 'active' : ''}`}
                 ></div>
               ))}
             </div>
@@ -104,9 +101,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds }) => 
               &gt;
             </button>
           </div>
-
-          {/* Content with transition animations */}
-          <div className="popup-content">
+          <div className="popup-content" style={{ backgroundColor: colors.rectanglePopupBg }}>
             <TransitionGroup>
               <CSSTransition
                 key={currentPage}

@@ -3,23 +3,25 @@ import React from 'react';
 import './styles/Navbar.css';
 
 const Navbar = () => {
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-links">
-        <a href="https://linkedin.com/in/nnilayy" target="_blank" rel="noopener noreferrer">
-          LinkedIn
+        <a href="#introduction" onClick={(e) => handleLinkClick(e, 'introduction')}>
+          Introduction
         </a>
-        <a href="https://twitter.com/nnilayy_" target="_blank" rel="noopener noreferrer">
-          Twitter
+        <a href="#work" onClick={(e) => handleLinkClick(e, 'work')}>
+          Work
         </a>
-        <a href="https://github.com/nnilayy" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-          Resume
-        </a>
-        <a href="mailto:nnilayy.work@gmail.com">
-          Email
+        <a href="#contacts" onClick={(e) => handleLinkClick(e, 'contacts')}>
+          Contacts
         </a>
       </div>
     </nav>

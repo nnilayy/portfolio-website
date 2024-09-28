@@ -7,7 +7,7 @@ import emailIcon from './styles/icons/email.png';
 import huggingFaceIcon from './styles/icons/hugging-face.svg';
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer id="contacts" className="footer">
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-links">

@@ -20,7 +20,7 @@ const calculatePathBounds = (pathData) => {
   return { minX, maxX, totalPathLength, tempPath };
 };
 
-const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent }) => {
+const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent, colors }) => {
   const { checkpoints, pathBounds } = useMemo(() => {
     const totalCheckpoints = numCheckpoints + 2;
     const { minX, maxX, totalPathLength, tempPath } = calculatePathBounds(pathData);
@@ -54,7 +54,11 @@ const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent }) => {
               cx={x}
               cy={y}
               r={10}
-              className={`checkpoint ${isPassed ? 'passed' : ''}`}
+              style={{
+                fill: isPassed ? colors.checkpointPassedColor : colors.checkpointDefaultColor,
+                filter: isPassed ? `drop-shadow(0 0 6px ${colors.checkpointGlowColor})` : 'none',
+                transition: 'fill 0.5s ease, filter 0.5s ease',
+              }}
             />
             {isMiddleCheckpoint && data.content && (
               <RectanglePopup
@@ -64,6 +68,7 @@ const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent }) => {
                 content={data.content}
                 isVisible={isPassed}
                 pathBounds={pathBounds}
+                colors={colors} // Pass colors to RectanglePopup
               />
             )}
           </g>
