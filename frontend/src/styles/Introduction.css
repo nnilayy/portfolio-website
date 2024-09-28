@@ -5,7 +5,6 @@
 .introduction {
   position: relative;
   padding: 250px 20px;
-  margin-top: 60px;
   text-align: center;
   color: var(--introduction-text);
   overflow: hidden;
