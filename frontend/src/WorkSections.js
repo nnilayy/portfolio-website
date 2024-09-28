@@ -26,6 +26,11 @@ const WorkSections = () => {
         setSectionColors(colorsRes.data);
         setSectionData(dataRes.data);
         setLoading(false);
+
+        // Set the default selected section to the first one
+        if (sectionsRes.data.length > 0) {
+          setSelectedSection(sectionsRes.data[0]);
+        }
       } catch (error) {
         console.error('Error fetching data from backend:', error);
         setLoading(false);
@@ -36,8 +41,8 @@ const WorkSections = () => {
   }, []);
 
   const handleSectionClick = (section) => {
-    // Toggle selected section
-    setSelectedSection((prevSection) => (prevSection === section ? null : section));
+    // Always set the selected section to the clicked one
+    setSelectedSection(section);
   };
 
   // if (loading) {
@@ -67,7 +72,7 @@ const WorkSections = () => {
           colors={sectionColors[selectedSection]}
         />
       ) : (
-        selectedSection && <div>No data available for this section.</div>
+        <div></div>
       )}
     </div>
   );
