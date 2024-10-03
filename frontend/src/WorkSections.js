@@ -11,7 +11,6 @@ const WorkSections = () => {
   const [sectionColors, setSectionColors] = useState({});
   const [sectionData, setSectionData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [loadingSection, setLoadingSection] = useState(false);
 
   useEffect(() => {
     // Fetch sections, sectionColors, and sectionData from the backend
@@ -26,6 +25,7 @@ const WorkSections = () => {
         setSectionColors(colorsRes.data);
         setSectionData(dataRes.data);
         setLoading(false);
+        console.log('Data fetched from backend:', dataRes.data);
 
         // Set the default selected section to the first one
         if (sectionsRes.data.length > 0) {
@@ -44,10 +44,6 @@ const WorkSections = () => {
     // Always set the selected section to the clicked one
     setSelectedSection(section);
   };
-
-  // if (loading) {
-  //   return <div>Loading...</div>; // Or any loading indicator
-  // }
 
   return (
     <div id="work" className="work-sections">
@@ -68,7 +64,7 @@ const WorkSections = () => {
       {selectedSection && sectionData[selectedSection] && sectionColors[selectedSection] ? (
         <Timeline
           numCheckpoints={sectionData[selectedSection].numCheckpoints}
-          data={sectionData[selectedSection].data}
+          data={sectionData[selectedSection].checkpoints} // Pass checkpoints to Timeline
           colors={sectionColors[selectedSection]}
         />
       ) : (

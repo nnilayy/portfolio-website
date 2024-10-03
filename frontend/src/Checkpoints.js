@@ -30,14 +30,17 @@ const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent, colors }) 
       const lengthAtPoint = position * totalPathLength;
       const { x, y } = tempPath.getPointAtLength(lengthAtPoint);
 
+      const isMiddleCheckpoint = i > 0 && i < totalCheckpoints - 1;
+      const dataIndex = i - 1; // Adjust index since we have extra checkpoints
+
       return {
         x,
         y,
-        isMiddleCheckpoint: i > 0 && i < totalCheckpoints - 1,
+        isMiddleCheckpoint,
         popupDirection: i % 2 === 0 ? 'left' : 'right',
         index: i,
         position,
-        data: data[i - 1] || {}, // Adjust index since we have extra checkpoints
+        data: dataIndex >= 0 && dataIndex < data.length ? data[dataIndex] : null,
       };
     });
 
@@ -60,15 +63,15 @@ const Checkpoints = ({ numCheckpoints, data, pathData, scrollPercent, colors }) 
                 transition: 'fill 0.5s ease, filter 0.5s ease',
               }}
             />
-            {isMiddleCheckpoint && data.content && (
+            {isMiddleCheckpoint && data && (
               <RectanglePopup
                 x={x}
                 y={y}
                 direction={popupDirection}
-                content={data.content}
+                content={data.pages} // Pass pages array to RectanglePopup
                 isVisible={isPassed}
                 pathBounds={pathBounds}
-                colors={colors} // Pass colors to RectanglePopup
+                colors={colors}
               />
             )}
           </g>

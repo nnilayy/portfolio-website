@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import './styles/RectanglePopup.css';
-import './styles/RectanglePopUpPageLayouts/DefaultLayout.css'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, colors }) => {
@@ -112,33 +111,12 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
                 classNames="fade"
               >
                 <div className="content-page">
-                  {/* Title */}
-                  {contentArray[currentPage]?.title && (
-                    <p className='content-page-title'><i>{contentArray[currentPage].title}</i></p>
+                  <h3>{contentArray[currentPage]?.title || 'No Title'}</h3>
+                  {/* Display other fields if needed */}
+                  {contentArray[currentPage]?.content && (
+                    <p>{contentArray[currentPage].content}</p>
                   )}
-
-                  <div className='content'>
-                    {/* Content*/}
-                    {contentArray[currentPage]?.content && (
-                      <p className='content-page-content'>{contentArray[currentPage].content}</p>
-                    )}
-
-                    {/* Image */}
-                    {contentArray[currentPage]?.image && (
-                      <p className='content-page-image'>{contentArray[currentPage].image}</p>
-                    )}
-
-                    {/* Video */}
-                    {contentArray[currentPage]?.video && (
-                      <p className='content-page-video'>{contentArray[currentPage].video}</p>
-                    )}
-
-                    {/* Link */}
-                    {contentArray[currentPage]?.link && (
-                      <p className='content-page-link'>{contentArray[currentPage].link}</p>
-                    )}
-                  </div>
-
+                  {/* Add image, video, link handling if necessary */}
                 </div>
               </CSSTransition>
             </TransitionGroup>
