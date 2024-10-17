@@ -114,23 +114,31 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
                 <div className="content-page">
                   {/* Title */}
                   {contentArray[currentPage]?.title && (
-                    <p className='content-page-title'><i>{contentArray[currentPage].title}</i></p>
+                    <p className={contentArray[currentPage]?.titleClassName}>
+                      <i>
+                        {contentArray[currentPage].title}
+                      </i>
+                    </p>
                   )}
 
-                  <div className='content'>
+                  <div className={contentArray[currentPage]?.outerClassName}>
                     {/* Content*/}
                     {contentArray[currentPage]?.content && (
-                      <p className='content-page-content'>{contentArray[currentPage].content}</p>
+                      <p className={contentArray[currentPage]?.contentClassName}> 
+                        {contentArray[currentPage].content}
+                      </p>
                     )}
 
                     {/* Image */}
-                    {contentArray[currentPage]?.image && (
-                      <p className='content-page-image'>{contentArray[currentPage].image}</p>
+                    {contentArray[currentPage].image && (
+                      <img src="/Generative-AI-With-LLM.png" className={contentArray[currentPage]?.imgClassName}/>
                     )}
 
                     {/* Video */}
                     {contentArray[currentPage]?.video && (
-                      <p className='content-page-video'>{contentArray[currentPage].video}</p>
+                      <p className='content-page-video'>
+                        {contentArray[currentPage].video}
+                      </p>
                     )}
 
                     {/* Link */}

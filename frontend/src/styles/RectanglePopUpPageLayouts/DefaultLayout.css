@@ -1,13 +1,49 @@
 @import '../common.css';
 @import '../colors.css';
 
-.content{
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* OUTER-CONTENT-CLASS*/
+.outer-content{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
 }
-.content-page-title{
+.outer-content-blogs{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+}
+.outer-content-research{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+}
+.outer-content-internships{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+}
+.outer-content-project{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+}
+.outer-content-certfications{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+}
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* TITLE*/
+.content-page-title-base{
     display: flex;
     justify-content: center;
     font-size: 13px;
@@ -16,8 +52,55 @@
     color: white;
     text-shadow: 0 0 5px white;
 }
-
-.content-page-content{
+.content-page-title-blogs{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+.content-page-title-research{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+.content-page-title-internships{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+.content-page-title-project{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+.content-page-title-certfications{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 2px;
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* CONTENT-CONTENT*/
+.content-page-content-base{
     font-size: 7px;
     background-color: transparent;
     padding: 3px;
@@ -25,13 +108,95 @@
     margin-right: 4px;
     color: rgba(255, 255, 255, 0.766);
 }
-.content-page-image{
-background-color: blue;
+.content-page-content-blogs{
+    font-size: 7px;
+    background-color: transparent;
+    padding: 3px;
+    border-right: 1px solid rgba(146, 146, 146, 0.837);
+    margin-right: 4px;
+    color: rgba(255, 255, 255, 0.766);
 }
-.content-page-video{
-background-color: white;
+.content-page-content-research{
+    font-size: 7px;
+    background-color: transparent;
+    padding: 3px;
+    border-right: 1px solid rgba(146, 146, 146, 0.837);
+    margin-right: 4px;
+    color: rgba(255, 255, 255, 0.766);
+}
+.content-page-content-internships{
+    font-size: 7px;
+    background-color: transparent;
+    padding: 3px;
+    border-right: 1px solid rgba(146, 146, 146, 0.837);
+    margin-right: 4px;
+    color: rgba(255, 255, 255, 0.766);
+}
+.content-page-content-project{
+    font-size: 7px;
+    background-color: transparent;
+    padding: 3px;
+    border-right: 1px solid rgba(146, 146, 146, 0.837);
+    margin-right: 4px;
+    color: rgba(255, 255, 255, 0.766);
+}
+.content-page-content-certfications{
+    display: flex;
+    justify-content: center;
+    font-size: 7px;
+    font-style: italic;
+    background-color: transparent;
+    text-shadow: 0 0 5px white;
+    padding-top: 5px;
+    color: rgba(255, 255, 255, 0.766);
+}
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* CONTENT-IMAGE */
+.content-image-base{
+    background-color: blue;    
+}
+.content-image-blogs{
+    background-color: blue;    
+}
+.content-image-research{
+    background-color: blue;    
+}
+.content-image-internships{
+    background-color: blue;    
+}
+.content-image-project{
+    background-color: blue;    
+}  
+.content-image-certfications{
+height: 140px;
+border-radius: 3px;
+}
 
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* CONTENT-VIDEO */
+.content-page-video-base{
+background-color: white;
 }
+.content-page-video-blogs{
+background-color: white;
+}
+.content-page-video-research{
+background-color: white;
+}
+.content-page-video-internships{
+background-color: white;
+}    
+.content-page-video-project{
+background-color: white;
+}
+.content-page-video-certfications{
+background-color: white;
+}
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
+/* CONTENT-LINK*/
 .content-page-link{
     position: fixed;
     bottom:0;
@@ -40,3 +205,5 @@ background-color: white;
     font-size: 5px;
     background-color: transparent;
 }
+/* -------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------- */
