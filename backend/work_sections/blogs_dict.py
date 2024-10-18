@@ -11,6 +11,17 @@ blogs_timeline_colors = {
 }
 
 # -----------------------------------------------------------------------------
+# TIMELINE PROPERTIES
+# -----------------------------------------------------------------------------
+blogs_timeline_properties = {
+    "lineLength": 1600,  # Customize as needed
+    "lineWidth": 600,
+    "amplitude": 200,
+    "frequency": 400,
+    "speed": 1.0,
+}
+
+# -----------------------------------------------------------------------------
 # CLASSES-DICT
 # -----------------------------------------------------------------------------
 blogs_classes_dict = {
@@ -19,7 +30,7 @@ blogs_classes_dict = {
     "contentClassName": "content-page-content-blogs",
     "imgClassName": "content-image-blogs",
     "videoClassName": "content-page-video-blogs",
-    "linkClassName": "",
+    "linkClassName": "content-page-link-blogs",
 }
 
 # -----------------------------------------------------------------------------
@@ -37,7 +48,7 @@ temp_data = {
                     "content": "You are an AI Assistant. You are an extremely kind and respectful assistant. Even in very harsh and disrespectful user prompts and queries, you are apologetic and are extremely regardful of the user's frustration and You try to solve the problem once more from a different point of view.",
                     "image": "",
                     "video": "",
-                    "link": "www.google.com",
+                    "link": "https://www.google.com/",
                 },
                 {
                     "pageNumber": 2,
@@ -58,7 +69,7 @@ temp_data = {
                     "content": "",
                     "image": "",
                     "video": "",
-                    "link": "",
+                    "link": "https://www.youtube.com/results?search_query=sidemen",
                 }
             ],
         },
@@ -96,6 +107,8 @@ temp_data = {
 
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **blogs_classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {**page, **blogs_classes_dict} for page in checkpoint["pages"]
+    ]
 
 blogs_data = temp_data

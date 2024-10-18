@@ -10,6 +10,16 @@ internships_timeline_colors = {
     "boxShadow": "0 0 6px rgb(169, 255, 179)",
 }
 # -----------------------------------------------------------------------------
+# TIMELINE PROPERTIES
+# -----------------------------------------------------------------------------
+internships_timeline_properties = {
+    "lineLength": 1600,  # Customize as needed
+    "lineWidth": 600,
+    "amplitude": 200,
+    "frequency": 400,
+    "speed": 1.0,
+}
+# -----------------------------------------------------------------------------
 # CLASSES-DICT
 # -----------------------------------------------------------------------------
 internships_classes_dict = {
@@ -18,7 +28,7 @@ internships_classes_dict = {
     "contentClassName": "content-page-content-internships",
     "imgClassName": "content-image-internships",
     "videoClassName": "content-page-video-internships",
-    "linkClassName": "",
+    "linkClassName": "content-page-link-internships",
 }
 # -----------------------------------------------------------------------------
 # CONTENT-DATASTRUCTURE
@@ -128,7 +138,9 @@ temp_data = {
 
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **internships_classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {**page, **internships_classes_dict} for page in checkpoint["pages"]
+    ]
 
 # Assign the final result to internships_data
 internships_data = temp_data

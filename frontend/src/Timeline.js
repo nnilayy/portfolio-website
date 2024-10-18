@@ -10,8 +10,9 @@ const Timeline = ({
   frequency = 400,
   numCheckpoints = 0,
   data = [],
-  colors = {},   // Accept colors prop
-}) =>  {
+  colors = {},
+  speed = 1, // Default speed multiplier
+}) => {
   const [scrollPercent, setScrollPercent] = useState(0);
   const timelineSectionRef = useRef(null);
   const pathRef = useRef(null);
@@ -53,7 +54,11 @@ const Timeline = ({
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    // Include dependencies that affect the path
+  }, [handleScroll, lineLength, lineWidth, amplitude, frequency]);
+
+  // Adjust scroll percent with speed multiplier
+  const adjustedScrollPercent = Math.min(1, scrollPercent * speed);
 
   return (
     <section className="timeline-section" ref={timelineSectionRef}>
@@ -67,7 +72,7 @@ const Timeline = ({
           {/* Dark Path */}
           <path
             d={generatePathData}
-            stroke={colors.timelineDarkPath}
+            stroke={colors.timelineDarkPath || '#212120'}
             strokeWidth={5}
             fill="none"
           />
@@ -79,16 +84,16 @@ const Timeline = ({
             strokeWidth={5}
             fill="none"
             strokeDasharray={totalLength}
-            strokeDashoffset={totalLength - scrollPercent * totalLength}
-            style={{ filter: `drop-shadow(0 0 6px ${colors.timelineBrightLine})` }}
+            strokeDashoffset={totalLength - adjustedScrollPercent * totalLength}
+            style={{ filter: `drop-shadow(0 0 6px ${colors.timelineBrightLine || '#ff3030'})` }}
           />
           {/* Checkpoints */}
           <Checkpoints
             numCheckpoints={numCheckpoints}
             data={data}
             pathData={generatePathData}
-            scrollPercent={scrollPercent}
-            colors={colors} // Pass colors to Checkpoints
+            scrollPercent={adjustedScrollPercent} // Use adjusted scroll percent
+            colors={colors}
           />
         </svg>
       </div>

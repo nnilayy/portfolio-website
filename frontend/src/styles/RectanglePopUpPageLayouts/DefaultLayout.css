@@ -143,11 +143,13 @@
 .content-page-content-certfications{
     display: flex;
     justify-content: center;
-    font-size: 7px;
+    align-items: center;
+    font-size: 6px;
+    flex-wrap: wrap;
     font-style: italic;
     background-color: transparent;
     text-shadow: 0 0 5px white;
-    padding-top: 5px;
+    padding-top: 3px;
     color: rgba(255, 255, 255, 0.766);
 }
 /* -------------------------------------------------------------------------------------------- */
@@ -197,13 +199,98 @@ background-color: white;
 /* -------------------------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------------------------- */
 /* CONTENT-LINK*/
-.content-page-link{
+.link-icon{
+    width: 10px;
+    height: 10px;
+    filter: brightness(0) invert(1); 
+    transition: opacity 0.35s ease;
+    opacity: 0.5;
+}
+.link-icon:hover{
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px white); 
+
+
+}
+.content-page-link-base{
+    display: flex;
+    justify-content: flex-end;
     position: fixed;
     bottom:0;
+    left: 0;
     width: 100%;
-    padding: 2px;
-    font-size: 5px;
+    height: 7%;
+    padding: 3px;
+    padding-right: 10px;
+    font-size: 8px;
+    background-color: rgba(255, 0, 0, 0.327);
+}
+
+.content-page-link-blogs{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 9%;
+    padding: 3px;
+    padding-right: 10px;
+    font-size: 8px;
+    background-color: rgba(255, 161, 161, 0.177);
+}
+.content-page-link-research{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    padding: 3px;
+    padding-right: 10px;
+    font-size: 8px;
+    background-color: red;
+}
+.content-page-link-internships{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    padding: 3px;
+    padding-right: 10px;
+    font-size: 8px;
+    background-color: red;
+}
+.content-page-link-project{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    padding: 3px;
+    padding-right: 10px;
+    font-size: 8px;
+    background-color: red;
+}
+.content-page-link-certfications{
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    font-size: 8px;
     background-color: transparent;
+
 }
 /* -------------------------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------------------------- */

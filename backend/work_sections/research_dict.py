@@ -10,6 +10,16 @@ research_timeline_colors = {
     "boxShadow": "0 0 6px rgb(135, 155, 255)",
 }
 # -----------------------------------------------------------------------------
+# TIMELINE PROPERTIES
+# -----------------------------------------------------------------------------
+research_timeline_properties = {
+    "lineLength": 1600,  # Customize as needed
+    "lineWidth": 600,
+    "amplitude": 200,
+    "frequency": 400,
+    "speed": 1.0,
+}
+# -----------------------------------------------------------------------------
 # CLASSES-DICT
 # -----------------------------------------------------------------------------
 research_classes_dict = {
@@ -18,7 +28,7 @@ research_classes_dict = {
     "contentClassName": "content-page-content-research",
     "imgClassName": "content-image-research",
     "videoClassName": "content-page-video-research",
-    "linkClassName": "",
+    "linkClassName": "content-page-link-research",
 }
 # -----------------------------------------------------------------------------
 # CONTENT-DATASTRUCTURE
@@ -115,7 +125,9 @@ temp_data = {
 
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **research_classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {**page, **research_classes_dict} for page in checkpoint["pages"]
+    ]
 
 # Assign the final result to research_data
 research_data = temp_data

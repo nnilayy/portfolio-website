@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import './styles/RectanglePopup.css';
-import './styles/RectanglePopUpPageLayouts/DefaultLayout.css'
+import './styles/RectanglePopUpPageLayouts/DefaultLayout.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import linkIcon from './new-tab.png'; // Import the icon
 
 const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, colors }) => {
   const popupWidth = 220;
@@ -108,7 +109,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
             <TransitionGroup>
               <CSSTransition
                 key={currentPage}
-                timeout={300}
+                timeout={500}
                 classNames="fade"
               >
                 <div className="content-page">
@@ -143,7 +144,11 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
 
                     {/* Link */}
                     {contentArray[currentPage]?.link && (
-                      <p className='content-page-link'>{contentArray[currentPage].link}</p>
+                      <p className={contentArray[currentPage]?.linkClassName}>
+                        <a href={contentArray[currentPage].link} target="_blank" rel="noopener noreferrer">
+                          <img src={linkIcon} alt="Link icon" className="link-icon" />
+                        </a>
+                      </p>
                     )}
                   </div>
 

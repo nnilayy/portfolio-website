@@ -10,6 +10,16 @@ projects_timeline_colors = {
     "boxShadow": "0 0 6px rgb(251, 255, 134)",
 }
 # -----------------------------------------------------------------------------
+# TIMELINE PROPERTIES
+# -----------------------------------------------------------------------------
+projects_timeline_properties = {
+    "lineLength": 1600,  # Customize as needed
+    "lineWidth": 600,
+    "amplitude": 200,
+    "frequency": 400,
+    "speed": 1.0,
+}
+# -----------------------------------------------------------------------------
 # CLASSES-DICT
 # -----------------------------------------------------------------------------
 projects_classes_dict = {
@@ -18,7 +28,7 @@ projects_classes_dict = {
     "contentClassName": "content-page-content-project",
     "imgClassName": "content-image-project",
     "videoClassName": "content-page-video-project",
-    "linkClassName": "",
+    "linkClassName": "content-page-link-project",
 }
 # -----------------------------------------------------------------------------
 # CONTENT-DATASTRUCTURE
@@ -149,7 +159,9 @@ temp_data = {
 
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **projects_classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {**page, **projects_classes_dict} for page in checkpoint["pages"]
+    ]
 
 # Assign the final result to projects_data
 projects_data = temp_data

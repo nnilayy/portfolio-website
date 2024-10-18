@@ -1,17 +1,18 @@
 /* src/styles/RectanglePopup.css */
+/* Other imports */
 @import './common.css';
 @import './colors.css';
 
 .popup-foreign-object{
   border-radius: 10px;
 }
+
 .popup-container {
   background-color: transparent;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* box-shadow: 0 0 20px white; */
 }
 
 .popup-header {
@@ -23,9 +24,7 @@
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.715);
   border-bottom: none;
-  /* box-shadow: 0 0 20px white; */
   color: rgb(170, 141, 255);
-
 }
 
 .popup-content {
@@ -33,8 +32,8 @@
   padding: 5px;
   border-radius: 0 0 10px 10px;
   height: 100%;
-  position: relative; /* Positioning for absolute children */
-  overflow: hidden; /* Clip overflow during animation */
+  position: relative; /* Ensure parent is relative */
+  overflow: hidden; /* Hide overflow during transitions */
   border: 1px solid rgba(255, 255, 255, 0.715);
 }
 

@@ -10,6 +10,16 @@ extensions_timeline_colors = {
     "boxShadow": "0 0 6px rgb(170, 141, 255)",
 }
 # -----------------------------------------------------------------------------
+# TIMELINE PROPERTIES
+# -----------------------------------------------------------------------------
+extensions_timeline_properties = {
+    "lineLength": 1600,  # Customize as needed
+    "lineWidth": 600,
+    "amplitude": 200,
+    "frequency": 400,
+    "speed": 1.0,
+}
+# -----------------------------------------------------------------------------
 # CLASSES-DICT
 # -----------------------------------------------------------------------------
 extensions_classes_dict = {
@@ -64,10 +74,11 @@ temp_data = {
 }
 
 
-
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **extensions_classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {**page, **extensions_classes_dict} for page in checkpoint["pages"]
+    ]
 
 # Assign the final result to extensions_data
 extensions_data = temp_data
