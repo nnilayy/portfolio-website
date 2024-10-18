@@ -70,6 +70,16 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
     deltaXRef.current = 0;
   };
 
+  // Helper function to render content with newlines
+  const renderContentWithNewlines = (content) => {
+    return content.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        {index !== content.split('\n').length - 1 && <br />}
+      </React.Fragment>
+    ));
+  };
+
   return (
     <g
       className={`rectangle-popup ${direction} ${isVisible ? 'visible' : ''}`}
@@ -117,7 +127,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
                   {contentArray[currentPage]?.title && (
                     <p className={contentArray[currentPage]?.titleClassName}>
                       <i>
-                        {contentArray[currentPage].title}
+                        {contentArray[currentPage]?.title}
                       </i>
                     </p>
                   )}
@@ -126,26 +136,26 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
                     {/* Content*/}
                     {contentArray[currentPage]?.content && (
                       <p className={contentArray[currentPage]?.contentClassName}> 
-                        {contentArray[currentPage].content}
+                        {renderContentWithNewlines(contentArray[currentPage]?.content)}
                       </p>
                     )}
 
                     {/* Image */}
-                    {contentArray[currentPage].image && (
+                    {contentArray[currentPage]?.image && (
                       <img src="/Generative-AI-With-LLM.png" className={contentArray[currentPage]?.imgClassName}/>
                     )}
 
                     {/* Video */}
                     {contentArray[currentPage]?.video && (
                       <p className='content-page-video'>
-                        {contentArray[currentPage].video}
+                        {contentArray[currentPage]?.video}
                       </p>
                     )}
 
                     {/* Link */}
                     {contentArray[currentPage]?.link && (
                       <p className={contentArray[currentPage]?.linkClassName}>
-                        <a href={contentArray[currentPage].link} target="_blank" rel="noopener noreferrer">
+                        <a href={contentArray[currentPage]?.link} target="_blank" rel="noopener noreferrer">
                           <img src={linkIcon} alt="Link icon" className="link-icon" />
                         </a>
                       </p>

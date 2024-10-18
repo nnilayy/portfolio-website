@@ -27,7 +27,96 @@ certification_8_name = "Tools for Data Science"
 certification_9_name = "TensorFlow Developer Certificate in 2023: Zero To Mastery"
 certification_10_name = "Complete Tensorflow 2 and Keras Deep Learning Bootcamp"
 certification_11_name = "2022 Python for Machine Learning & Data Science Masterclass"
+# -----------------------------------------------------------------------------
+# CERTIFICATIONS-PAGE-2-TITLE
+# -----------------------------------------------------------------------------
+certification_page_2_title = "Course Coverage"
+# -----------------------------------------------------------------------------
+# BOLD-FUNCTION
+# -----------------------------------------------------------------------------
+def bold(text):
+    return f"\033[1m{text}\033[0m"
+# -----------------------------------------------------------------------------
+# CERTIFICATIONS-PAGE-2-CONTENT
+# -----------------------------------------------------------------------------
+certification_1_page_2_content = (
+    f"""Hey, how are you doing today:
 
+    (1)
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_2_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_3_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_4_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_5_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_6_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_7_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_8_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_9_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_10_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
+certification_11_page_2_content = (
+    """Hey, how are you doing today
+    (1)Yo
+    (2)Yo
+    (3)Yo
+    """
+    )
 # -----------------------------------------------------------------------------
 # CERTIFICATIONS-LINKS
 # -----------------------------------------------------------------------------
@@ -99,6 +188,7 @@ classes_dict = {
     "linkClassName": "content-page-link-certfications",
 }
 
+
 # -----------------------------------------------------------------------------
 # CONTENT-DATASTRUCTURE
 # -----------------------------------------------------------------------------
@@ -118,11 +208,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_1_page_2_content,
                     "image": "",
                     "video": "",
-                    "link": certification_4_link,
+                    "link": certification_1_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -139,11 +230,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_2_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_2_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -160,11 +252,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_3_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_4_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -181,11 +274,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_4_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_4_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -202,11 +296,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_5_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_5_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -223,11 +318,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_6_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_6_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -244,11 +340,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_7_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_7_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -265,11 +362,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_8_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_8_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -286,11 +384,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_9_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_9_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -307,11 +406,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_10_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_10_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -328,11 +428,12 @@ temp_data = {
                 },
                 {
                     "pageNumber": 2,
-                    "title": "",
-                    "content": "",
+                    "title": certification_page_2_title,
+                    "content": certification_11_page_2_content,
                     "image": "",
                     "video": "",
                     "link": certification_11_link,
+                    "contentClassName": "content-page-2-content-certfications",
                 },
             ],
         },
@@ -341,7 +442,13 @@ temp_data = {
 
 # Add the class names to each page using a one-line for loop
 for checkpoint in temp_data["checkpoints"]:
-    checkpoint["pages"] = [{**page, **classes_dict} for page in checkpoint["pages"]]
+    checkpoint["pages"] = [
+        {
+            **page,
+            **{k: v for k, v in classes_dict.items() if k not in page}
+        }
+        for page in checkpoint["pages"]
+    ]
 
 # Assign the result to certifications_data
 certifications_data = temp_data

@@ -53,7 +53,7 @@ temp_data = {
                 {
                     "pageNumber": 2,
                     "title": "Blog Post 1 - Page 2",
-                    "content": "",
+                    "content": "You are an AI Assistant. You are an extremely kind and respectful assistant. Even in very harsh and disrespectful user prompts and queries, you are apologetic and are extremely regardful of the user's frustration and You try to solve the problem once more from a different point of view.",
                     "image": "",
                     "video": "",
                     "link": "",

@@ -89,17 +89,17 @@
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 1000ms ease;
 }
 
 /* Fade-out animation */
 .fade-exit {
-  opacity: 1;
+  opacity: 0;
 }
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in;
+  transition: opacity 1000ms ease;
 }
 
 /* Existing styles for .rectangle-popup and other classes remain unchanged */

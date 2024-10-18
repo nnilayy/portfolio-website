@@ -152,6 +152,14 @@
     padding-top: 3px;
     color: rgba(255, 255, 255, 0.766);
 }
+.content-page-2-content-certfications{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 8px;
+    background-color: transparent;
+    padding-top: 3px;
+    color: rgba(255, 255, 255, 0.766);
+}
 /* -------------------------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------------------------- */
 /* CONTENT-IMAGE */
