@@ -40,11 +40,18 @@ def bold(text):
 # CERTIFICATIONS-PAGE-2-CONTENT
 # -----------------------------------------------------------------------------
 certification_1_page_2_content = (
-    f"""Hey, how are you doing today:
+    f"""(1)Foundational Concepts
+    (i)Generative AI and LLM basics
+    (ii)Transformer architecture
+    (iii)Prompt engineering strategies
 
-    (1)
-    (2)Yo
-    (3)Yo
+    (2)Advanced LLM Techniques
+    (i)Instruction fine-tuning
+    (ii)Parameter Efficient Fine-Tuning (PEFT)
+    (iii)Low-Rank Adaptation (LoRA)
+    (iv)Reinforcement Learning from Human Feedback (RLHF)
+    (v)Scaling laws and compute-optimal models
+
     """
     )
 certification_2_page_2_content = (
