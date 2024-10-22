@@ -35,30 +35,40 @@ certification_page_2_title = "Course Coverage"
 # BOLD-FUNCTION
 # -----------------------------------------------------------------------------
 def bold(text):
-    return f"\033[1m{text}\033[0m"
+    return f"<b>{text}</b>"
+
+def italic(text):
+    return f"<i>{text}</i>"
+
 # -----------------------------------------------------------------------------
 # CERTIFICATIONS-PAGE-2-CONTENT
 # -----------------------------------------------------------------------------
 certification_1_page_2_content = (
-    f"""(1)Foundational Concepts
-    (i)Generative AI and LLM basics
-    (ii)Transformer architecture
-    (iii)Prompt engineering strategies
+    f"""{bold(italic("1. Foundational Concepts"))}
+    o Generative AI and LLM basics
+    o Transformer architecture
+    o Prompt engineering strategies
 
-    (2)Advanced LLM Techniques
-    (i)Instruction fine-tuning
-    (ii)Parameter Efficient Fine-Tuning (PEFT)
-    (iii)Low-Rank Adaptation (LoRA)
-    (iv)Reinforcement Learning from Human Feedback (RLHF)
-    (v)Scaling laws and compute-optimal models
-
+    {bold(italic("2. Applications"))}
+    o Instruction fine-tuning
+    o Parameter Efficient Fine-Tuning (PEFT)
+    o Low-Rank Adaptation (LoRA)
+    o Reinforcement Learning from Human Feedback (RLHF)
+    o Scaling laws and compute-optimal models
     """
     )
 certification_2_page_2_content = (
-    """Hey, how are you doing today
-    (1)Yo
-    (2)Yo
-    (3)Yo h
+    f"""{bold(italic("1. Foundational Concepts"))}
+    o Generative AI and LLM basics
+    o Transformer architecture
+    o Prompt engineering strategies
+
+    {bold(italic("2. Applications"))}
+    o Instruction fine-tuning
+    o Parameter Efficient Fine-Tuning (PEFT)
+    o Low-Rank Adaptation (LoRA)
+    o Reinforcement Learning from Human Feedback (RLHF)
+    o Scaling laws and compute-optimal models
     """
     )
 certification_3_page_2_content = (
@@ -220,7 +230,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_1_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -242,7 +252,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_2_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -264,7 +274,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_4_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -286,7 +296,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_4_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -308,7 +318,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_5_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -330,7 +340,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_6_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -352,7 +362,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_7_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -374,7 +384,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_8_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -396,7 +406,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_9_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -418,7 +428,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_10_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },
@@ -440,7 +450,7 @@ temp_data = {
                     "image": "",
                     "video": "",
                     "link": certification_11_link,
-                    "contentClassName": "content-page-2-content-certfications",
+                    "contentClassName": "content-page-n-content-certfications",
                 },
             ],
         },

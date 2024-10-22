@@ -71,15 +71,28 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
   };
 
   // Helper function to render content with newlines
+  // const renderContentWithNewlines = (content) => {
+  //   return content.split('\n').map((line, index) => (
+  //     <React.Fragment key={index}>
+  //       {line}
+  //       {index !== content.split('\n').length - 1 && <br />}
+  //     </React.Fragment>
+  //   ));
+  // };
+
   const renderContentWithNewlines = (content) => {
-    return content.split('\n').map((line, index) => (
+    const splitLines = content.split('\n');
+  
+    return splitLines.map((line, index) => (
       <React.Fragment key={index}>
-        {line}
-        {index !== content.split('\n').length - 1 && <br />}
+        <span
+          dangerouslySetInnerHTML={{ __html: line }}
+        />
+        {index !== splitLines.length - 1 && <br />}
       </React.Fragment>
     ));
   };
-
+  
   return (
     <g
       className={`rectangle-popup ${direction} ${isVisible ? 'visible' : ''}`}
