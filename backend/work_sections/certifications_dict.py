@@ -58,7 +58,7 @@ certification_2_page_2_content = (
     """Hey, how are you doing today
     (1)Yo
     (2)Yo
-    (3)Yo
+    (3)Yo h
     """
     )
 certification_3_page_2_content = (
