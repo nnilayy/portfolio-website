@@ -1,18 +1,17 @@
 # -----------------------------------------------------------------------------
 # CERTIFICATIONS-IMAGES
 # -----------------------------------------------------------------------------
-certfication_1_image = "Generative AI with Large Language Models.png"
-certfication_2_image = "Generative-AI-With-LLM.png"
-certfication_3_image = "Generative-AI-With-LLM.png"
-certfication_4_image = "Generative-AI-With-LLM.png"
-certfication_5_image = "Generative-AI-With-LLM.png"
-certfication_6_image = "Generative-AI-With-LLM.png"
-certfication_7_image = "Generative-AI-With-LLM.png"
-certfication_8_image = "Generative-AI-With-LLM.png"
-certfication_9_image = "Generative-AI-With-LLM.png"
-certfication_10_image = "Generative-AI-With-LLM.png"
-certfication_11_image = "Generative-AI-With-LLM.png"
-
+certfication_1_image = "./certifications/Generative AI with Large Language Models.png"
+certfication_2_image = "./certifications/Databases.png"
+certfication_3_image = "./certifications/Databases.png"
+certfication_4_image = "./certifications/Python Project for Data Science.png"
+certfication_5_image = "./certifications/Python for Data Science, AI & Development.png"
+certfication_6_image = "./certifications/Data Science Methodology.png"
+certfication_7_image = "./certifications/What is Data Science.png"
+certfication_8_image = "./certifications/Tools for Data Science.png"
+certfication_9_image = "./certifications/Tools for Data Science.png"
+certfication_10_image = "./certifications/Tools for Data Science.png"
+certfication_11_image = "./certifications/Tools for Data Science.png"
 # -----------------------------------------------------------------------------
 # CERTIFICATIONS-NAMES
 # -----------------------------------------------------------------------------

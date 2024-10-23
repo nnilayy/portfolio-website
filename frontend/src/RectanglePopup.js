@@ -155,7 +155,7 @@ const RectanglePopup = ({ x, y, direction, content, isVisible, pathBounds, color
 
                     {/* Image */}
                     {contentArray[currentPage]?.image && (
-                      <img src="/Generative-AI-With-LLM.png" className={contentArray[currentPage]?.imgClassName}/>
+                      <img src={contentArray[currentPage]?.image} className={contentArray[currentPage]?.imgClassName}/>
                     )}
 
                     {/* Video */}
