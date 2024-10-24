@@ -15,13 +15,13 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-links">
         <a href="#introduction" onClick={(e) => handleLinkClick(e, 'introduction')}>
-          Introduction
+          About
         </a>
         <a href="#work" onClick={(e) => handleLinkClick(e, 'work')}>
           Work
         </a>
         <a href="#contacts" onClick={(e) => handleLinkClick(e, 'contacts')}>
-          Contacts
+          Contact
         </a>
       </div>
     </nav>
