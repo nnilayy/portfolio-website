@@ -389,6 +389,14 @@ certification_8_page_4_content = (
     """
 )
 
+certification_8_page_5_content = (
+    f"""{bold(italic("5. Practical Applications"))}
+    o Markdown formatting for technical documentation
+    o Basic data visualization using R's plotting functions
+    o Repository management with GitHub web interface
+    o Watson Studio notebook integration with GitHub
+    """
+)
 
 
 # -----------------------------------------------------------------------------
